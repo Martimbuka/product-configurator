@@ -1,0 +1,158 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+#addBtn {
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@keyframes buttonClickAdd {
+    from {
+        background-color: #4CAF50;
+        scale: 1;
+    }
+    to {
+        background-color: #45a049;
+        scale: 0.9;
+    }
+}
+
+#addBtn:active {
+    animation: buttonClick 0.5s;
+}
+
+.openingDireciton {
+    margin-top: 10px;
+}
+
+#removeBtn {
+    padding: 5px;
+    background-color: #f44336;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@keyframes buttonClickRemove {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 0.9;
+    }
+}
+
+#removeBtn:active {
+    animation: buttonClickRemove 0.5s;
+}
+
+#count {
+    /* center the text */
+    text-align: center;
+}
+
+/* Select menu */
+.icon_select_mate {
+    position: absolute;
+    top:20px;
+    right: 2%;
+    font-size: 16px;
+      height: 22px;
+    transition: all 275ms;
+  }
+  
+  .select_mate {
+    position: relative;
+    float: left;
+    min-width: 300px;
+    width: 300px;
+    min-height: 60px;
+    font-family: 'Roboto';
+    color: #777;
+    font-weight: 300;
+    background-color: #fff;
+    box-shadow: 1px 2px 10px -2px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    transition: all 375ms ease-in-out;
+  /* Oculto el elemento select */
+    select {
+    position: absolute;
+    overflow: hidden;
+    height: 0px;
+    opacity: 0;  
+      z-index: -1;
+    }
+  }
+  
+  .cont_list_select_mate {
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  
+  .cont_select_int {
+   position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    overflow: hidden;
+    height: 0px;
+    width: 100%;
+    background-color: #fff;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-radius: 0px 0px 3px 3px;
+    box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.2);
+    transition: all 375ms ease-in-out;
+  
+      li {
+      position: relative;
+      float: left;
+      width: 96%;
+      border-bottom:1px solid #E0E0E0;
+      background-color: #F5F5F5;
+      list-style-type: none;
+      padding: 10px 2%;
+      margin: 0px;  
+      transition: all 275ms ease-in-out;
+      display: block;
+      cursor:pointer;
+          
+          &:last-child {
+          border-radius: 3px;
+          border-bottom:0px; 
+  
+          }
+           &:hover {
+          background-color: #EEEEEE;
+           } 
+       }
+  
+     .active {
+     background-color: #EEEEEE;
+     }
+  
+  }
+  
+  /* etiqueta <p> con la opcion selecionada  */
+  .selecionado_opcion {
+      padding: 20px 2%;
+      width: 96%;
+      display: block;
+      margin: 0px;
+      cursor: pointer;
+  }
