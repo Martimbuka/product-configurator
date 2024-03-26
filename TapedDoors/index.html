@@ -8,7 +8,31 @@
     <script src="./selectBox.js" defer></script>        
     <title>Бланка за поръчка на тапетни врати</title>
 </head>
+
+
 <body>
+
+    <h1>Бланка за поръчка на тапетни врати</h1>
+
+    <!-- Craete a registration form - name,surname,email,telephone number-->
+    <form action="submit.php" method="post">
+        <div class="name">
+            <label for="name">Име</label>
+            <input id="name" name="name" required>
+        </div>
+        <div class="surname">
+            <label for="surname">Фамилия</label>
+            <input id="surname" name="surname" required>
+        </div>
+        <div>
+            <label for="email">Имейл</label>
+            <input id="email" name="email" required>
+        </div>
+        <div>
+            <label for="telephone">Телефонен номер</label>
+            <input id="telephone" name="telephone" required>
+        </div>
+    </form>
 
     <table>
         <thead>
@@ -20,30 +44,31 @@
                 <th>Брава с магнитен насрещник</th>
                 <th>Уплътнение</th>
                 <th>Количество</th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="myTable">
             <tr>
-                <td>
+                <td id="koloni">
                     <div>Широчина</div>
                     <input type="text" name="frameSize" required placeholder="LB, mm">
                     <div>Височина</div>
                     <input type="text" name="frameSize" required placeholder="HB, mm">
                 </td>
-                <td>
-                    <select name="openingDirection">
+                <td id="koloni">
+                    <select name="openingDirection" id="select">
                         <option value="inside">Навътре</option>
                         <option value="outside">Навън</option>
                     </select>
                     <div class="openingDireciton">
-                        <select name="openingDirection">
-                        <option value="inside">Дясна</option>
-                        <option value="outside">Лява</option>
+                        <select name="openingDirection" id="select">
+                            <option value="inside">Дясна</option>
+                            <option value="outside">Лява</option>
                         </select>
                     </div>
                     
                 </td>
-                <td>
+                <td id="koloni">
                     <div class="under60">
                         <input type="number" name="hingesNumber2" min="1" required placeholder="2 - Врата ≤ 60кг">
                     </div>
@@ -51,21 +76,21 @@
                         <input type="number" name="hingesNumber3" min="1" required placeholder="3 - Врата ≥ 60кг">
                     </div>  
                 </td>
-                <td>
+                <td id="koloni">
                     <input type="text" name="doorLeaf">
                 </td>
-                <td>
-                    <select name="magneticLock">
+                <td id="koloni">
+                    <select name="magneticLock" id="select">
                         <option value="CB">CB</option>
                         <option value="PC">PC</option>
                         <option value="WC">WC</option>
                         
                     </select>
                 </td>
-                <td>
+                <td id="koloni">
                     <div class="color">
                         <div class="select_mate" data-mate-select="active" >
-                            <select name="" onchange="" onclick="return false;" id="">
+                            <select name="" onchange="" onclick="return false;" id="select">
                             <option value="" >Цвят </option>
                             <option value="1">Бял</option>
                             <option value="2" >Сив</option>
@@ -74,20 +99,85 @@
 
                     
                 </td>
-                <td>
+                <td id="koloni">
                     <div>
-                        <div class="count">Брой</div>
-                        <input type="number" name="quantity" min="1" required>
+                        <input type="number" name="quantity" min="1" required placeholder="брой">
                     </div>
                 </td>
-                <td>
+                <td id="koloni">
                     <button id="removeBtn">X</button>
                 </td>
             </tr>
+                
+            
         </tbody>
     </table>
     <button id="addBtn">Добави</button>
+    <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
+    <button id="submitBtn">Изпрати</button>
 
+    <style>
+        /*Make the name and the surname side to side with some margin between them*/
+        #name, #surname {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    
+        /*Make the email and the telephone number side to side with some margin between them*/
+        #email, #telephone {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    
+        /*Make a border between the registration form and the table*/
+        form {
+            border-bottom: 1px solid black;
+            margin-bottom: 20px;
+        }
+        
+    
+        /*Make everything in a frame with borders with some margin of all sides*/
+        html {
+            border: 1px solid black;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+    
+        h1 {
+            text-align: center;
+        }
+    
+        #name, #surname, #email, #telephone {
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 8px; /* Add some rounded corners */
+        }
+    
+        /*put the label on top of the input*/
+        label {
+            display: block;
+        }
+
+        .name {
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        /*put surname in the middle of the frame*/
+        .surname {
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+    
+    
+    
+        
+    </style>
     <script>
         var myTable = document.getElementById("myTable");
         var addBtn = document.getElementById("addBtn");
@@ -124,6 +214,9 @@
                 });
             }
         });
+
+
+
     </script>
 </body>
 </html>
