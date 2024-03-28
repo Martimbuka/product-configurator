@@ -12,6 +12,12 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+
+.form-table{
+  width: 90%;
+  margin: 20px auto;
+}
+
 th, td {
     padding: 8px;
     border-bottom: 1px solid #ddd;
@@ -40,7 +46,6 @@ th, td {
 }
 
 #addBtn {
-    padding: 5px;
     margin-top: 10px;
     background-color: #4CAF50;
     border: none;
@@ -48,6 +53,10 @@ th, td {
     cursor: pointer;
     border-radius: 8px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    width: 27px;
+    height: 27px;
+    font-weight: bold;
 }
 @keyframes buttonClickAdd {
     from {
@@ -138,6 +147,8 @@ select {
     margin: 10px;
 }
 
+
+
 #submitBtn {
     padding: 5px 10px;
     background-color: #4CAF50;
@@ -145,17 +156,39 @@ select {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: block;
     margin-left: auto;
     margin-right: auto;
+    font-size: 15px;
+    float: inline-end;
 
 }
 
 #submitBtn:hover {
     background-color: #45a049;
 }
+
+#cancelBtn {
+  padding: 5px 10px;
+  background-color: #e03333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+
+}
+
+#cancelBtn:hover {
+  background-color: #c02929;
+}
+
+
 
 #notes {
     margin-top: 10px;
@@ -166,7 +199,7 @@ select {
     border-radius: 8px;
     width: 90%;
     display: block;
-    ;
+    
 }
 
 @media only screen and (max-width: 768px) {

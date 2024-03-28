@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <!-- Link javascript-->
-    <script src="./selectBox.js" defer></script>        
+    <script src="./selectBox.js" defer></script>
     <title>Бланка за поръчка на тапетни врати</title>
 </head>
 
@@ -15,26 +16,28 @@
     <h1>Бланка за поръчка на тапетни врати</h1>
 
     <!-- Craete a registration form - name,surname,email,telephone number-->
-    <form action="submit.php" method="post">
-        <div class="name">
-            <label for="name">Име</label>
-            <input id="name" name="name" required>
-        </div>
-        <div class="surname">
-            <label for="surname">Фамилия</label>
-            <input id="surname" name="surname" required>
-        </div>
-        <div>
-            <label for="email">Имейл</label>
-            <input id="email" name="email" required>
-        </div>
-        <div>
-            <label for="telephone">Телефонен номер</label>
-            <input id="telephone" name="telephone" required>
-        </div>
+    <form method="post">
+        <table class="form-table">
+            <tr>
+                <th class="required">Име</th>
+                <th class="required">Фамилия</th>
+            </tr>
+            <tr>
+                <td><input id="name" name="name" required></td>
+                <td><input id="surname" name="surname" required></td>
+            </tr>
+            <tr>
+                <th class="required">Имейл </span></th>
+                <th class="required">Телефонен номер </th>
+            </tr>
+            <tr>
+                <td><input id="email" name="email" required placeholder="example@prodes.bg"></td>
+                <td><input id="telephone" name="telephone" required placeholder="+359"></td>
+            </tr>
+        </table>
     </form>
 
-    <table>
+    <table class="specifications-table">
         <thead>
             <tr>
                 <th>Размер на рамката (mm)</th>
@@ -66,7 +69,7 @@
                             <option value="outside">Лява</option>
                         </select>
                     </div>
-                    
+
                 </td>
                 <td id="koloni">
                     <div class="under60">
@@ -74,7 +77,7 @@
                     </div>
                     <div class="above60">
                         <input type="number" name="hingesNumber3" min="1" required placeholder="3 - Врата ≥ 60кг">
-                    </div>  
+                    </div>
                 </td>
                 <td id="koloni">
                     <input type="text" name="doorLeaf">
@@ -84,59 +87,64 @@
                         <option value="CB">CB</option>
                         <option value="PC">PC</option>
                         <option value="WC">WC</option>
-                        
+
                     </select>
                 </td>
                 <td id="koloni">
                     <div class="color">
-                        <div class="select_mate" data-mate-select="active" >
+                        <div class="select_mate" data-mate-select="active">
                             <select name="" onchange="" onclick="return false;" id="select">
-                            <option value="" >Цвят </option>
-                            <option value="1">Бял</option>
-                            <option value="2" >Сив</option>
-                              </select>
-                    </div>
+                                <option value="">Цвят </option>
+                                <option value="1">Бял</option>
+                                <option value="2">Сив</option>
+                            </select>
+                        </div>
 
-                    
+
                 </td>
                 <td id="koloni">
                     <div>
                         <input type="number" name="quantity" min="1" required placeholder="брой">
                     </div>
                 </td>
-                <td id="koloni">
+                <!--<td id="koloni">
                     <button id="removeBtn">X</button>
-                </td>
+                </td>-->
             </tr>
-                
-            
+
+
         </tbody>
     </table>
-    <button id="addBtn">Добави</button>
+    <button id="addBtn">+</button>
     <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
+    <button id="cancelBtn">Откажи</button>
     <button id="submitBtn">Изпрати</button>
 
     <style>
         /*Make the name and the surname side to side with some margin between them*/
-        #name, #surname {
-            display: inline-block;
+        #name,
+        #surname {
+            display: block;
             margin-right: 10px;
+            width: 80%;
         }
-    
+
         /*Make the email and the telephone number side to side with some margin between them*/
-        #email, #telephone {
-            display: inline-block;
+        #email,
+        #telephone {
             margin-right: 10px;
             margin-bottom: 10px;
+            display: block;
+            width: 80%;
         }
-    
+
         /*Make a border between the registration form and the table*/
         form {
             border-bottom: 1px solid black;
             margin-bottom: 20px;
         }
-        
-    
+
+
         /*Make everything in a frame with borders with some margin of all sides*/
         html {
             border: 1px solid black;
@@ -144,39 +152,48 @@
             margin: 20px;
             border-radius: 5px;
         }
-    
+
         h1 {
             text-align: center;
         }
-    
-        #name, #surname, #email, #telephone {
-            margin-bottom: 10px;
+
+        #name,
+        #surname,
+        #email,
+        #telephone {
+            /*margin-bottom: 10px;*/
             border-radius: 5px;
             padding: 3px;
             border: 1px solid #ccc;
-            border-radius: 8px; /* Add some rounded corners */
-        }
-    
-        /*put the label on top of the input*/
-        label {
-            display: block;
-        }
-
-        .name {
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        /*put surname in the middle of the frame*/
-        .surname {
-            margin-bottom: 10px;
-            display: inline-block;
+            border-radius: 8px;
+            /* Add some rounded corners */
         }
         
-    
-    
-    
-        
+
+        /*Form table*/
+        .form-table {
+            border: none;
+        }
+
+        .form-table th,
+        .form-table td {
+            padding: 10px;
+            border: none;
+        }
+
+        .form-table th {
+            text-align: left;
+            padding-bottom: 0;
+        }
+
+
+        .required:after {
+            content: " *";
+            color: red;
+        }
+
+        /*Form table
+        ----------------------------*/
     </style>
     <script>
         var myTable = document.getElementById("myTable");
@@ -184,7 +201,7 @@
         var removeBtn = document.getElementById("removeBtn");
 
 
-        addBtn.addEventListener("click", function() {
+        addBtn.addEventListener("click", function () {
             var newRow = myTable.insertRow(-1);
             var frameSizeCell = newRow.insertCell(0);
             var openingDirectionCell = newRow.insertCell(1);
@@ -199,7 +216,7 @@
             frameSizeCell.innerHTML = `<td><div>Широчина</div><input type="text" name="frameSize" required placeholder="LB, mm"><div>Височина</div><input type="text" name="frameSize" required placeholder="HB, mm"></td>`;
             openingDirectionCell.innerHTML = `<td><select name="openingDirection"><option value="inside">Навътре</option><option value="outside">Навън</option></select><div class="openingDireciton"><select name="openingDirection"><option value="inside">Дясна</option><option value="outside">Лява</option></select></div></td>`;
             hingesNumberCell.innerHTML = `<td><input type="number" name="hingesNumber" min="1" required></td>`;
-            doorLeafCell.innerHTML =  `<td><input type="text" name="doorLeaf"></td>`;
+            doorLeafCell.innerHTML = `<td><input type="text" name="doorLeaf"></td>`;
             magneticLockCell.innerHTML = `<td><select name="magneticLock"><option value="yes">Да</option><option value="no">Не</option></select></td>`;
             sealCell.innerHTML = `<td><div>Цвят<select name="seal"><option value="white">Бял</option><option value="grey">Сив</option></select></div></td>`;
             quantityCell.innerHTML = `<td><div>Брой<input type="number" name="quantity" min="1" required></div></td>`;
@@ -209,7 +226,7 @@
             var removeButtons = document.querySelectorAll("#removeBtn");
             for (var i = 0; i < removeButtons.length; i++) {
                 var button = removeButtons[i];
-                button.addEventListener("click", function(event) {
+                button.addEventListener("click", function (event) {
                     event.target.parentElement.parentElement.remove();
                 });
             }
@@ -219,4 +236,5 @@
 
     </script>
 </body>
+
 </html>
