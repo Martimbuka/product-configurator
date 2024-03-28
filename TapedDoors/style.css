@@ -10,155 +10,170 @@ html {
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-table {
-    border-collapse: collapse;
-    width: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.form-table{
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.form-table {
   width: 90%;
   margin: 20px auto;
 }
 
-th, td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
 }
 
 /*Form ---------------*/
-        /*Make the name and the surname side to side with some margin between them*/
-        #name,
-        #surname,
-        #email,
-        #telephone {
-            display: block;
-            margin-right: 10px;
-            width: 80%;
-            height: 20px;
-        }
+/*Make the name and the surname side to side with some margin between them*/
+#name,
+#surname,
+#email,
+#telephone {
+  display: block;
+  margin-right: 10px;
+  width: 80%;
+  height: 20px;
+}
 
 
-        /*Make a border between the registration form and the table*/
-        form {
-            border-bottom: 1px solid black;
-            margin-bottom: 20px;
-        }
-         
-
-        h1 {
-            text-align: center;
-        }
-
-        #name,
-        #surname,
-        #email,
-        #telephone {
-            /*margin-bottom: 10px;*/
-            border-radius: 5px;
-            padding: 3px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            /* Add some rounded corners */
-        }
-        
-
-        /*Form table*/
-        .form-table {
-            border: none;
-        }
-
-        .form-table th,
-        .form-table td {
-            padding: 10px;
-            border: none;
-        }
-
-        .form-table th {
-            text-align: left;
-            padding-bottom: 0;
-        }
+/*Make a border between the registration form and the table*/
+form {
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
 
 
-        .required:after {
-            content: " *";
-            color: red;
-        }
+h1 {
+  text-align: center;
+}
 
-        /*Form table
+#name,
+#surname,
+#email,
+#telephone {
+  /*margin-bottom: 10px;*/
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Add some rounded corners */
+}
+
+
+/*Form table*/
+.form-table {
+  border: none;
+}
+
+.form-table th,
+.form-table td {
+  padding: 10px;
+  border: none;
+}
+
+.form-table th {
+  text-align: left;
+  padding-bottom: 0;
+}
+
+
+.required:after {
+  content: " *";
+  color: red;
+}
+
+/*Form table
         ----------------------------*/
 
+
+        /*Specifications ----------------------*/
+h2 {
+  margin-top: -4%;
+  text-align: center;
+}
+
 #koloni {
-    justify-content: center;
-    align-items: center; 
-  }
+  justify-content: center;
+  align-items: center;
+}
 
 #select {
   width: 100px;
   padding: 10px;
   border: 1px solid #ddd;
-  cursor: pointer; /* Optional: Style cursor on hover */
-  border-radius: 8px; /* Optional: Add some rounded corners */
+  cursor: pointer;
+  /* Optional: Style cursor on hover */
+  border-radius: 8px;
+  /* Optional: Add some rounded corners */
   text-align: left;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; 
+  position: relative;
 }
 
 #select:hover {
-  border-color: #999; /* Optional: Darken border on hover */
+  border-color: #999;
+  /* Optional: Darken border on hover */
 }
 
 #addBtn {
-    margin-top: 10px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    width: 27px;
-    height: 27px;
-    font-weight: bold;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  width: 27px;
+  height: 27px;
+  font-weight: bold;
 }
+
 @keyframes buttonClickAdd {
-    from {
-        background-color: #4CAF50;
-        scale: 1;
-    }
-    to {
-        background-color: #45a049;
-        scale: 0.9;
-    }
+  from {
+    background-color: #4CAF50;
+    scale: 1;
+  }
+
+  to {
+    background-color: #45a049;
+    scale: 0.9;
+  }
 }
 
 #addBtn:active {
-    animation: buttonClick 0.5s;
+  animation: buttonClick 0.5s;
 }
 
 #addBtn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .openingDireciton {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 
 @keyframes buttonClickRemove {
-    from {
-        scale: 1;
-    }
-    to {
-        scale: 0.9;
-    }
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 0.9;
+  }
 }
 
 #removeBtn:active {
-    animation: buttonClickRemove 0.5s;
+  animation: buttonClickRemove 0.5s;
 }
 
 
@@ -169,26 +184,31 @@ select {
   width: 100%;
   padding: 5px;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Add some rounded corners */
+  border-radius: 8px;
+  /* Add some rounded corners */
 }
 
 /* Nested input fields within 'Брой панти' cell */
 .hingesNumber2 input,
 .hingesNumber3 input {
-  width: 40%; /* Adjust width for each input */
+  width: 40%;
+  /* Adjust width for each input */
   display: inline-block;
-  margin-right: 5px; /* Add some spacing between inputs */
+  margin-right: 5px;
+  /* Add some spacing between inputs */
 }
 
 /* Style the 'Количество' cell */
 .count {
   font-weight: bold;
-  margin-bottom: 5px; /* Add space between label and input */
+  margin-bottom: 5px;
+  /* Add space between label and input */
 }
 
 /* Style the 'Уплътнение' cell (assuming 'color' class is for color selection) */
 .color select {
-  width: auto; /* Adjust width as needed */
+  width: auto;
+  /* Adjust width as needed */
 }
 
 /* Remove button styling */
@@ -202,37 +222,38 @@ select {
 }
 
 #removeBtn:hover {
-  background-color: #c02929; /* Darken on hover */
+  background-color: #c02929;
+  /* Darken on hover */
 }
 
 .above60 {
-    margin: 10px;
+  margin: 10px;
 }
 
 .under60 {
-    margin: 10px;
+  margin: 10px;
 }
-
+/*-------------------------------------*/
 
 
 #submitBtn {
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 15px;
-    float: inline-end;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  float: inline-end;
 
 }
 
 #submitBtn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 #cancelBtn {
@@ -257,48 +278,57 @@ select {
 
 
 #notes {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 90%;
-    display: block;
-    
+  margin-top: 10px;
+  
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 90%;
+  display: block;
+
 }
 
 @media only screen and (max-width: 768px) {
-    /* Adjust table layout for smaller screens */
-    th, td {
-      display: block; /* Stack headers and content vertically */
-    }
-    th {
-      font-weight: bold; /* Distinguish headers on small screens */
-    }
-    td:before {
-      content: attr(data-label) ": "; /* Add labels before content */
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    [data-label] {
-      display: block;
-    }
-    
-    /* Adjust nested inputs and select widths */
-    .hingesNumber2 input,
-    .hingesNumber3 input,
-    select {
-      width: 100%;
-    }
-    .color select {
-      width: calc(100% - 20px); /* Account for padding */
-    }
-    
-    /* Remove margins from 'above60' and 'under60' classes (if used) */
-    .above60,
-    .under60 {
-      margin: 0;
-    }
+
+  /* Adjust table layout for smaller screens */
+  th,
+  td {
+    display: block;
+    /* Stack headers and content vertically */
   }
+
+  th {
+    font-weight: bold;
+    /* Distinguish headers on small screens */
+  }
+
+  td:before {
+    content: attr(data-label) ": ";
+    /* Add labels before content */
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  [data-label] {
+    display: block;
+  }
+
+  /* Adjust nested inputs and select widths */
+  .hingesNumber2 input,
+  .hingesNumber3 input,
+  select {
+    width: 100%;
+  }
+
+  .color select {
+    width: calc(100% - 20px);
+    /* Account for padding */
+  }
+
+  /* Remove margins from 'above60' and 'under60' classes (if used) */
+  .above60,
+  .under60 {
+    margin: 0;
+  }
+}

@@ -40,141 +40,196 @@
     <!--  Make 5 images of informations of the taped doors
     the images are in folder ./img/  -->
     <div class="images">
-        <img src="./img/1.jpg" alt="1">
-        <img src="./img/2.jpg" alt="2">
-        <img src="./img/3.jpg" alt="3">
-        <img src="./img/4.jpg" alt="4">
-        <img src="./img/5.jpg" alt="5">
-    </div>
+        <div class="row">
+            <div class="column">
+                <img src="./img/1.jpg" alt="1" style="width:100%">
+                <img src="./img/4.jpg" alt="4" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="./img/2a.jpg" alt="2" style="width:100%">
+                <img src="./img/5.jpg" alt="5" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="./img/3.jpg" alt="3" style="width:100%">
+                <!-- Text area which is not editible-->
+                <p id="description">Ако желаете изработка на крило, задължително се добавя и брава с магнитен насрещник (моля, посочете необходимия вид на заключване).
+                    Можете да поръчате и само брава с магнитен насрещник, без крило. В комплекта за всяка врата са включени монтажни елементи за каса.
+                </p>
+            </div>
+        </div>
 
-    <h2>Спецификации</h2>
+        <h2>Спецификации</h2>
 
-    <table class="specifications-table">
-        <thead>
-            <tr>
-                <th>Размер на рамката (mm)</th>
-                <th>Посока на отваряне</th>
-                <th>Брой панти</th>
-                <th>Крило</th>
-                <th>Брава с магнитен насрещник</th>
-                <th>Уплътнение</th>
-                <th>Количество</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody id="myTable">
-            <tr>
-                <td id="koloni">
-                    <div>Широчина</div>
-                    <input type="text" name="frameSize" required placeholder="LB, mm">
-                    <div>Височина</div>
-                    <input type="text" name="frameSize" required placeholder="HB, mm">
-                </td>
-                <td id="koloni">
-                    <select name="openingDirection" id="select">
-                        <option value="inside">Навътре</option>
-                        <option value="outside">Навън</option>
-                    </select>
-                    <div class="openingDireciton">
+        <table class="specifications-table">
+            <thead>
+                <tr>
+                    <th>Размер на рамката (mm)</th>
+                    <th>Посока на отваряне</th>
+                    <th>Брой панти</th>
+                    <th>Крило</th>
+                    <th>Брава с магнитен насрещник</th>
+                    <th>Уплътнение</th>
+                    <th>Количество</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <td id="koloni">
+                        <div>Широчина</div>
+                        <input type="text" name="frameSize" required placeholder="LB, mm">
+                        <div>Височина</div>
+                        <input type="text" name="frameSize" required placeholder="HB, mm">
+                    </td>
+                    <td id="koloni">
                         <select name="openingDirection" id="select">
-                            <option value="inside">Дясна</option>
-                            <option value="outside">Лява</option>
+                            <option value="inside">Навътре</option>
+                            <option value="outside">Навън</option>
                         </select>
-                    </div>
-
-                </td>
-                <td id="koloni">
-                    <div class="under60">
-                        <input type="number" name="hingesNumber2" min="1" required placeholder="2 - Врата ≤ 60кг">
-                    </div>
-                    <div class="above60">
-                        <input type="number" name="hingesNumber3" min="1" required placeholder="3 - Врата ≥ 60кг">
-                    </div>
-                </td>
-                <td id="koloni">
-                    <input type="text" name="doorLeaf">
-                </td>
-                <td id="koloni">
-                    <select name="magneticLock" id="select">
-                        <option value="CB">CB</option>
-                        <option value="PC">PC</option>
-                        <option value="WC">WC</option>
-
-                    </select>
-                </td>
-                <td id="koloni">
-                    <div class="color">
-                        <div class="select_mate" data-mate-select="active">
-                            <select name="" onchange="" onclick="return false;" id="select">
-                                <option value="">Цвят </option>
-                                <option value="1">Бял</option>
-                                <option value="2">Сив</option>
+                        <div class="openingDireciton">
+                            <select name="openingDirection" id="select">
+                                <option value="inside">Дясна</option>
+                                <option value="outside">Лява</option>
                             </select>
                         </div>
 
+                    </td>
+                    <td id="koloni">
+                        <div class="under60">
+                            <input type="number" name="hingesNumber2" min="1" required placeholder="2 - Врата ≤ 60кг">
+                        </div>
+                        <div class="above60">
+                            <input type="number" name="hingesNumber3" min="1" required placeholder="3 - Врата ≥ 60кг">
+                        </div>
+                    </td>
+                    <td id="koloni">
+                        <input type="text" name="doorLeaf">
+                    </td>
+                    <td id="koloni">
+                        <select name="magneticLock" id="select">
+                            <option value="CB">CB</option>
+                            <option value="PC">PC</option>
+                            <option value="WC">WC</option>
 
-                </td>
-                <td id="koloni">
-                    <div>
-                        <input type="number" name="quantity" min="1" required placeholder="брой">
-                    </div>
-                </td>
-                <!--<td id="koloni">
+                        </select>
+                    </td>
+                    <td id="koloni">
+                        <div class="color">
+                            <div class="select_mate" data-mate-select="active">
+                                <select name="" onchange="" onclick="return false;" id="select">
+                                    <option value="">Цвят </option>
+                                    <option value="1">Бял</option>
+                                    <option value="2">Сив</option>
+                                </select>
+                            </div>
+
+
+                    </td>
+                    <td id="koloni">
+                        <div>
+                            <input type="number" name="quantity" min="1" required placeholder="брой">
+                        </div>
+                    </td>
+                    <!--<td id="koloni">
                     <button id="removeBtn">X</button>
                 </td>-->
-            </tr>
+                </tr>
 
 
-        </tbody>
-    </table>
-    <button id="addBtn">+</button>
-    <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
-    <button id="cancelBtn">Откажи</button>
-    <button id="submitBtn">Изпрати</button>
+            </tbody>
+        </table>
+        <button id="addBtn">+</button>
+        <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
+        <button id="cancelBtn">Откажи</button>
+        <button id="submitBtn">Изпрати</button>
 
-    <style>
-        
-    </style>
-    <script>
-        var myTable = document.getElementById("myTable");
-        var addBtn = document.getElementById("addBtn");
-        var removeBtn = document.getElementById("removeBtn");
+        <style>
 
-
-        addBtn.addEventListener("click", function () {
-            var newRow = myTable.insertRow(-1);
-            var frameSizeCell = newRow.insertCell(0);
-            var openingDirectionCell = newRow.insertCell(1);
-            var hingesNumberCell = newRow.insertCell(2);
-            var doorLeafCell = newRow.insertCell(3);
-            var magneticLockCell = newRow.insertCell(4);
-            var sealCell = newRow.insertCell(5);
-            var quantityCell = newRow.insertCell(6);
-            var removeCell = newRow.insertCell(7);
-
-
-            frameSizeCell.innerHTML = `<td><div>Широчина</div><input type="text" name="frameSize" required placeholder="LB, mm"><div>Височина</div><input type="text" name="frameSize" required placeholder="HB, mm"></td>`;
-            openingDirectionCell.innerHTML = `<td><select name="openingDirection"><option value="inside">Навътре</option><option value="outside">Навън</option></select><div class="openingDireciton"><select name="openingDirection"><option value="inside">Дясна</option><option value="outside">Лява</option></select></div></td>`;
-            hingesNumberCell.innerHTML = `<td><input type="number" name="hingesNumber" min="1" required></td>`;
-            doorLeafCell.innerHTML = `<td><input type="text" name="doorLeaf"></td>`;
-            magneticLockCell.innerHTML = `<td><select name="magneticLock"><option value="yes">Да</option><option value="no">Не</option></select></td>`;
-            sealCell.innerHTML = `<td><div>Цвят<select name="seal"><option value="white">Бял</option><option value="grey">Сив</option></select></div></td>`;
-            quantityCell.innerHTML = `<td><div>Брой<input type="number" name="quantity" min="1" required></div></td>`;
-            removeCell.innerHTML = `<td><button id="removeBtn">X</button></td>`;
-
-
-            var removeButtons = document.querySelectorAll("#removeBtn");
-            for (var i = 0; i < removeButtons.length; i++) {
-                var button = removeButtons[i];
-                button.addEventListener("click", function (event) {
-                    event.target.parentElement.parentElement.remove();
-                });
+            /*Images --------------------*/
+            img {
+                width: 100%;
+                height: 45%;
             }
-        });
+
+            /* Create three columns of images */
+            .row {
+                display: flex;
+            }
+            
+
+            .column {
+                float: left;
+                width: 32%;
+                padding: 5px;
+            }
+
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            #description {
+                margin-top: 0;
+                border: 1px solid black;
+                height: 45%;
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: justify;
+                /*make the font size always to fit in the box*/
+
+            }
+
+            .images {
+                border-bottom: 1px solid black;
+                margin-bottom: 20px;
+            }
+
+
+            /*---------------------*/
+        </style>
+        <script>
+            var myTable = document.getElementById("myTable");
+            var addBtn = document.getElementById("addBtn");
+            var removeBtn = document.getElementById("removeBtn");
+
+
+            addBtn.addEventListener("click", function () {
+                var newRow = myTable.insertRow(-1);
+                var frameSizeCell = newRow.insertCell(0);
+                var openingDirectionCell = newRow.insertCell(1);
+                var hingesNumberCell = newRow.insertCell(2);
+                var doorLeafCell = newRow.insertCell(3);
+                var magneticLockCell = newRow.insertCell(4);
+                var sealCell = newRow.insertCell(5);
+                var quantityCell = newRow.insertCell(6);
+                var removeCell = newRow.insertCell(7);
+
+
+                frameSizeCell.innerHTML = `<td><div>Широчина</div><input type="text" name="frameSize" required placeholder="LB, mm"><div>Височина</div><input type="text" name="frameSize" required placeholder="HB, mm"></td>`;
+                openingDirectionCell.innerHTML = `<td><select name="openingDirection"><option value="inside">Навътре</option><option value="outside">Навън</option></select><div class="openingDireciton"><select name="openingDirection"><option value="inside">Дясна</option><option value="outside">Лява</option></select></div></td>`;
+                hingesNumberCell.innerHTML = `<td><input type="number" name="hingesNumber" min="1" required></td>`;
+                doorLeafCell.innerHTML = `<td><input type="text" name="doorLeaf"></td>`;
+                magneticLockCell.innerHTML = `<td><select name="magneticLock"><option value="yes">Да</option><option value="no">Не</option></select></td>`;
+                sealCell.innerHTML = `<td><div>Цвят<select name="seal"><option value="white">Бял</option><option value="grey">Сив</option></select></div></td>`;
+                quantityCell.innerHTML = `<td><div>Брой<input type="number" name="quantity" min="1" required></div></td>`;
+                removeCell.innerHTML = `<td><button id="removeBtn">X</button></td>`;
+
+
+                var removeButtons = document.querySelectorAll("#removeBtn");
+                for (var i = 0; i < removeButtons.length; i++) {
+                    var button = removeButtons[i];
+                    button.addEventListener("click", function (event) {
+                        event.target.parentElement.parentElement.remove();
+                    });
+                }
+            });
 
 
 
-    </script>
+        </script>
 </body>
 
 </html>
