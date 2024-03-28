@@ -1,8 +1,12 @@
 html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
 }
 
 body {
@@ -22,6 +26,68 @@ th, td {
     padding: 8px;
     border-bottom: 1px solid #ddd;
 }
+
+/*Form ---------------*/
+        /*Make the name and the surname side to side with some margin between them*/
+        #name,
+        #surname,
+        #email,
+        #telephone {
+            display: block;
+            margin-right: 10px;
+            width: 80%;
+            height: 20px;
+        }
+
+
+        /*Make a border between the registration form and the table*/
+        form {
+            border-bottom: 1px solid black;
+            margin-bottom: 20px;
+        }
+         
+
+        h1 {
+            text-align: center;
+        }
+
+        #name,
+        #surname,
+        #email,
+        #telephone {
+            /*margin-bottom: 10px;*/
+            border-radius: 5px;
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            /* Add some rounded corners */
+        }
+        
+
+        /*Form table*/
+        .form-table {
+            border: none;
+        }
+
+        .form-table th,
+        .form-table td {
+            padding: 10px;
+            border: none;
+        }
+
+        .form-table th {
+            text-align: left;
+            padding-bottom: 0;
+        }
+
+
+        .required:after {
+            content: " *";
+            color: red;
+        }
+
+        /*Form table
+        ----------------------------*/
 
 #koloni {
     justify-content: center;

@@ -37,6 +37,18 @@
         </table>
     </form>
 
+    <!--  Make 5 images of informations of the taped doors
+    the images are in folder ./img/  -->
+    <div class="images">
+        <img src="./img/1.jpg" alt="1">
+        <img src="./img/2.jpg" alt="2">
+        <img src="./img/3.jpg" alt="3">
+        <img src="./img/4.jpg" alt="4">
+        <img src="./img/5.jpg" alt="5">
+    </div>
+
+    <h2>Спецификации</h2>
+
     <table class="specifications-table">
         <thead>
             <tr>
@@ -121,79 +133,7 @@
     <button id="submitBtn">Изпрати</button>
 
     <style>
-        /*Make the name and the surname side to side with some margin between them*/
-        #name,
-        #surname {
-            display: block;
-            margin-right: 10px;
-            width: 80%;
-        }
-
-        /*Make the email and the telephone number side to side with some margin between them*/
-        #email,
-        #telephone {
-            margin-right: 10px;
-            margin-bottom: 10px;
-            display: block;
-            width: 80%;
-        }
-
-        /*Make a border between the registration form and the table*/
-        form {
-            border-bottom: 1px solid black;
-            margin-bottom: 20px;
-        }
-
-
-        /*Make everything in a frame with borders with some margin of all sides*/
-        html {
-            border: 1px solid black;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 5px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        #name,
-        #surname,
-        #email,
-        #telephone {
-            /*margin-bottom: 10px;*/
-            border-radius: 5px;
-            padding: 3px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            /* Add some rounded corners */
-        }
         
-
-        /*Form table*/
-        .form-table {
-            border: none;
-        }
-
-        .form-table th,
-        .form-table td {
-            padding: 10px;
-            border: none;
-        }
-
-        .form-table th {
-            text-align: left;
-            padding-bottom: 0;
-        }
-
-
-        .required:after {
-            content: " *";
-            color: red;
-        }
-
-        /*Form table
-        ----------------------------*/
     </style>
     <script>
         var myTable = document.getElementById("myTable");
