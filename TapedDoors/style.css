@@ -25,7 +25,6 @@ td {
 }
 
 /*Form ---------------*/
-/*Make the name and the surname side to side with some margin between them*/
 #name,
 #surname,
 #email,
@@ -37,7 +36,6 @@ td {
 }
 
 
-/*Make a border between the registration form and the table*/
 form {
   border-bottom: 1px solid black;
   margin-bottom: 20px;
@@ -52,12 +50,10 @@ h1 {
 #surname,
 #email,
 #telephone {
-  /*margin-bottom: 10px;*/
   border-radius: 5px;
   padding: 3px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  /* Add some rounded corners */
 }
 
 
@@ -83,11 +79,68 @@ h1 {
   color: red;
 }
 
-/*Form table
+/*
         ----------------------------*/
 
+/*Images --------------------*/
+img {
+  width: 49%;
+}
 
-        /*Specifications ----------------------*/
+/* Create three columns of images */
+.row {
+  display: flex;
+}
+
+
+.column {
+  float: left;
+  padding: 5px;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#description {
+  margin-top: 0;
+  border: 2px solid rgb(209, 6, 6);
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: justify;
+  font-family: cursive
+}
+
+.images {
+  border-bottom: 1px solid black;
+}
+
+#exclamation-mark {
+  font-size: 50px;
+  color: rgb(209, 6, 6);
+  text-align: center;
+  pointer-events: none;
+}
+
+.desc-row {
+  display: grid;
+  grid-template-columns: 2% 98%;
+  align-items: center;
+}
+
+.desc-column {
+  margin: 1%;
+}
+
+/*---------------------*/
+
+/*Specifications ----------------------*/
 h2 {
   text-align: center;
 }
@@ -227,6 +280,7 @@ select {
 .under60 {
   margin: 10px;
 }
+
 /*-------------------------------------*/
 
 
@@ -273,7 +327,7 @@ select {
 
 #notes {
   margin-top: 10px;
-  
+
   padding: 5px;
   border: 1px solid #ddd;
   border-radius: 8px;
