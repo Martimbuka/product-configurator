@@ -1,16 +1,11 @@
-html {
-  border: 1px solid black;
+body {
+  border: 2px solid black;
   padding: 20px;
-  margin: 20px;
+  margin: 5%;
   border-radius: 5px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
-}
-
-body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, cursive;
 }
 
 table {
@@ -38,7 +33,7 @@ td {
   display: block;
   margin-right: 10px;
   width: 80%;
-  height: 20px;
+  height: 25px;
 }
 
 
@@ -94,7 +89,6 @@ h1 {
 
         /*Specifications ----------------------*/
 h2 {
-  margin-top: -4%;
   text-align: center;
 }
 
