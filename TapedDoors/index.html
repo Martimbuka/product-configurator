@@ -75,7 +75,89 @@
 
     <h2>Спецификации</h2>
 
-    <table class="specifications-table">
+    <div class="specifications">
+        <div class="specifications-row">
+            <div class="specifications-column">
+                <div class="cell">
+                    <p>Размер на рамката (mm)</p>
+                    <div class="spec-sub-table">
+                        <div class="spec-sub-row">
+                            <div class="spec-sub-column">
+                                <div class="cell">Широчина</div>
+                            </div>
+                            <div class="spec-sub-column">
+                                <div class="cell">Височина</div>
+                            </div>
+                        </div>
+                        <div class="spec-sub-row">
+                            <div class="spec-sub-column">
+                                <div class="cell">LB, mm</div>
+                            </div>
+                            <div class="spec-sub-column">
+                                <div class="cell">HB, mm</div>
+                            </div>
+                        </div>
+                        <div class="spec-sub-row">
+                            <div class="spec-sub-column">
+                                <div class="cell"><input type="text" name="frameSize" required></div>
+                            </div>
+                            <div class="spec-sub-column">
+                                <div class="cell"><input type="text" name="frameSize" required></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="specifications-columns">
+                <div class="cell">
+                    <p>Посока на отваряне</p>
+                    <div class="spec-sub-table">
+                        <div class="spec-sub-row">
+                            <div class="spec-sub-column">
+                                <div class="cell">
+                                    <select name="openingDirection" id="select">
+                                        <option value="inside">Навътре</option>
+                                        <option value="outside">Навън</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spec-sub-row">
+                            <div class="spec-sub-column">
+                                <div class="cell">
+                                    <select name="openingDirection" id="select">
+                                        <option value="inside">Дясна</option>
+                                        <option value="outside">Лява</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+
+            <div class="specifications-columns">
+                <div class="cell">
+                    <p>Брой панти</p>
+                    <div class="spec-sub-table">
+                        <div class="spec-sub-row">
+                            <div class="spec-sub-column">
+                                <div class="cell">
+                                    <input type="number" name="hingesNumber" min="1" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <table class="specifications-table">
         <thead>
             <tr>
                 <th>Размер на рамката (mm)</th>
@@ -145,15 +227,15 @@
                         <input type="number" name="quantity" min="1" required placeholder="брой">
                     </div>
                 </td>
-                <!--<td id="koloni">
+                <td id="koloni">
                     <button id="removeBtn">X</button>
-                </td>-->
+                </td>
             </tr>
 
 
         </tbody>
     </table>
-    <button id="addBtn">+</button>
+    <button id="addBtn">+</button> -->
     <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
     <button id="cancelBtn">Откажи</button>
     <button id="submitBtn">Изпрати</button>
@@ -161,7 +243,61 @@
 
 
     <style>
-        
+
+        .specifications input {
+            max-width: 100%;
+            padding: 10px;
+            margin: 5px;
+            width: 80px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .specifications {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            border: 1px solid #ccc;
+        }
+
+        .specifications-row {
+            display: flex;
+        }
+
+        .cell {
+            padding: 0px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .spec-sub-table {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .spec-sub-row {
+            display: flex;
+        }
+
+        .spec-sub-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .spec-sub-table .cell {
+            padding: 2px;
+            text-align: center;
+            border: 1px solid #e60303;    
+            height: 100%;;
+        }
+
+        .spec-sub-table .cell select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
     </style>
     <script>
         var myTable = document.getElementById("myTable");

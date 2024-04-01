@@ -145,7 +145,7 @@ h2 {
   text-align: center;
 }
 
-#koloni {
+/* #koloni {
   justify-content: center;
   align-items: center;
 }
@@ -155,9 +155,7 @@ h2 {
   padding: 10px;
   border: 1px solid #ddd;
   cursor: pointer;
-  /* Optional: Style cursor on hover */
   border-radius: 8px;
-  /* Optional: Add some rounded corners */
   text-align: left;
   display: flex;
   justify-content: center;
@@ -167,7 +165,6 @@ h2 {
 
 #select:hover {
   border-color: #999;
-  /* Optional: Darken border on hover */
 }
 
 #addBtn {
@@ -224,7 +221,6 @@ h2 {
 }
 
 
-/* Style for input fields within table cells */
 input[type="text"],
 input[type="number"],
 select {
@@ -232,33 +228,24 @@ select {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  /* Add some rounded corners */
-}
+} 
 
-/* Nested input fields within 'Брой панти' cell */
 .hingesNumber2 input,
 .hingesNumber3 input {
   width: 40%;
-  /* Adjust width for each input */
   display: inline-block;
   margin-right: 5px;
-  /* Add some spacing between inputs */
 }
 
-/* Style the 'Количество' cell */
 .count {
   font-weight: bold;
   margin-bottom: 5px;
-  /* Add space between label and input */
 }
 
-/* Style the 'Уплътнение' cell (assuming 'color' class is for color selection) */
 .color select {
   width: auto;
-  /* Adjust width as needed */
 }
 
-/* Remove button styling */
 #removeBtn {
   padding: 5px 10px;
   background-color: #e03333;
@@ -270,7 +257,6 @@ select {
 
 #removeBtn:hover {
   background-color: #c02929;
-  /* Darken on hover */
 }
 
 .above60 {
@@ -279,7 +265,7 @@ select {
 
 .under60 {
   margin: 10px;
-}
+} */
 
 /*-------------------------------------*/
 
