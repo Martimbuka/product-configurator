@@ -13,151 +13,155 @@
 
 <body>
 
-    <h1>Бланка за поръчка на тапетни врати</h1>
+    <div class="container">
 
-    <!-- Craete a registration form - name,surname,email,telephone number-->
-    <form method="post">
-        <table class="form-table">
-            <tr>
-                <th class="required">Име</th>
-                <th class="required">Фамилия</th>
-            </tr>
-            <tr>
-                <td><input id="name" name="name" required></td>
-                <td><input id="surname" name="surname" required></td>
-            </tr>
-            <tr>
-                <th class="required">Имейл </span></th>
-                <th class="required">Телефонен номер </th>
-            </tr>
-            <tr>
-                <td><input id="email" name="email" required placeholder="example@prodes.bg"></td>
-                <td><input id="telephone" name="telephone" required placeholder="+359"></td>
-            </tr>
-        </table>
-    </form>
+        <h1>Бланка за поръчка на тапетни врати</h1>
 
-    <div class="images">
-        <div class="table-imgs">
-            <div class="row">
-                <div class="column">
-                    <img src="./img/1.jpg" alt="1" style="padding-bottom: 10%;">
-                    <img src="./img/4.jpg" alt="4">
+        <div class="form-container">
+            <form method="post">
+                <table class="form-table">
+                    <tr>
+                        <th class="required">Име</th>
+                        <th class="required">Фамилия</th>
+                    </tr>
+                    <tr>
+                        <td><input id="name" name="name" required></td>
+                        <td><input id="surname" name="surname" required></td>
+                    </tr>
+                    <tr>
+                        <th class="required">Имейл </span></th>
+                        <th class="required">Телефонен номер </th>
+                    </tr>
+                    <tr>
+                        <td><input id="email" name="email" required placeholder="example@prodes.bg"></td>
+                        <td><input id="telephone" name="telephone" required placeholder="+359"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="images">
+            <div class="table-imgs">
+                <div class="row">
+                    <div class="column">
+                        <img src="./img/1.jpg" alt="1" style="padding-bottom: 10%;">
+                        <img src="./img/4.jpg" alt="4">
+                    </div>
+                    <div class="column">
+
+                    </div>
+                    <div class="column">
+                        <img src="./img/razmeri.jpg" alt="Size">
+                        <img id="img-openingDirection" src="./img/openingDirection.jpg" alt="Opening direction">
+                    </div>
+
                 </div>
-                <div class="column">
+            </div>
+            <div class="desc">
+                <div class="desc-row">
+                    <div class="desc-column">
+                        <p id="exclamation-mark">!</p>
+
+                    </div>
+                    <div class="desc-column">
+                        <p id="description">Ако желаете изработка на крило, задължително се добавя и брава с магнитен
+                            насрещник (моля, посочете необходимия вид на заключване).
+                            Можете да поръчате и само брава с магнитен насрещник, без крило. В комплекта за всяка врата
+                            са
+                            включени монтажни елементи за каса.
+                        </p>
+                    </div>
 
                 </div>
-                <div class="column">
-                    <img src="./img/razmeri.jpg" alt="Size">
-                    <img id="img-openingDirection" src="./img/openingDirection.jpg" alt="Opening direction">
-                </div>
-
             </div>
         </div>
-        <div class="desc">
-            <div class="desc-row">
-                <div class="desc-column">
-                    <p id="exclamation-mark">!</p>
-
-                </div>
-                <div class="desc-column">
-                    <p id="description">Ако желаете изработка на крило, задължително се добавя и брава с магнитен
-                        насрещник (моля, посочете необходимия вид на заключване).
-                        Можете да поръчате и само брава с магнитен насрещник, без крило. В комплекта за всяка врата са
-                        включени монтажни елементи за каса.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
 
-    <h2>Спецификации</h2>
+        <h2>Спецификации</h2>
 
-    <div class="specifications">
-        <div class="specifications-row">
-            <div class="specifications-column">
-                <div class="cell">
-                    <p>Размер на рамката (mm)</p>
-                    <div class="spec-sub-table">
-                        <div class="spec-sub-row">
-                            <div class="spec-sub-column">
-                                <div class="cell">Широчина</div>
-                            </div>
-                            <div class="spec-sub-column">
-                                <div class="cell">Височина</div>
-                            </div>
-                        </div>
-                        <div class="spec-sub-row">
-                            <div class="spec-sub-column">
-                                <div class="cell">LB, mm</div>
-                            </div>
-                            <div class="spec-sub-column">
-                                <div class="cell">HB, mm</div>
-                            </div>
-                        </div>
-                        <div class="spec-sub-row">
-                            <div class="spec-sub-column">
-                                <div class="cell"><input type="text" name="frameSize" required></div>
-                            </div>
-                            <div class="spec-sub-column">
-                                <div class="cell"><input type="text" name="frameSize" required></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="specifications-columns">
-                <div class="cell">
-                    <p>Посока на отваряне</p>
-                    <div class="spec-sub-table">
-                        <div class="spec-sub-row">
-                            <div class="spec-sub-column">
-                                <div class="cell">
-                                    <select name="openingDirection" id="select">
-                                        <option value="inside">Навътре</option>
-                                        <option value="outside">Навън</option>
-                                    </select>
+        <div class="specifications">
+            <div class="specifications-row">
+                <div class="specifications-column">
+                    <div class="cell">
+                        <p>Размер на рамката (mm)</p>
+                        <div class="spec-sub-table">
+                            <div class="spec-sub-row">
+                                <div class="spec-sub-column">
+                                    <div class="cell">Широчина</div>
+                                </div>
+                                <div class="spec-sub-column">
+                                    <div class="cell">Височина</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="spec-sub-row">
-                            <div class="spec-sub-column">
-                                <div class="cell">
-                                    <select name="openingDirection" id="select">
-                                        <option value="inside">Дясна</option>
-                                        <option value="outside">Лява</option>
-                                    </select>
+                            <div class="spec-sub-row">
+                                <div class="spec-sub-column">
+                                    <div class="cell">LB, mm</div>
+                                </div>
+                                <div class="spec-sub-column">
+                                    <div class="cell">HB, mm</div>
                                 </div>
                             </div>
-                        </div>
-                
-                    </div>
-                </div>
-            </div>
-
-            <div class="specifications-columns">
-                <div class="cell">
-                    <p>Брой панти</p>
-                    <div class="spec-sub-table">
-                        <div class="spec-sub-row">
-                            <div class="spec-sub-column">
-                                <div class="cell">
-                                    <input type="number" name="hingesNumber" min="1" required>
+                            <div class="spec-sub-row">
+                                <div class="spec-sub-column">
+                                    <div class="cell"><input type="text" name="frameSize" required></div>
+                                </div>
+                                <div class="spec-sub-column">
+                                    <div class="cell"><input type="text" name="frameSize" required></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+                </div>
+
+                <div class="specifications-columns">
+                    <div class="cell">
+                        <p>Посока на отваряне</p>
+                        <div class="spec-sub-table">
+                            <div class="spec-sub-row">
+                                <div class="spec-sub-column">
+                                    <div class="cell">
+                                        <select name="openingDirection" id="select">
+                                            <option value="inside">Навътре</option>
+                                            <option value="outside">Навън</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spec-sub-row">
+                                <div class="spec-sub-column">
+                                    <div class="cell">
+                                        <select name="openingDirection" id="select">
+                                            <option value="inside">Дясна</option>
+                                            <option value="outside">Лява</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="specifications-columns">
+                    <div class="cell">
+                        <p>Брой панти</p>
+                        <div class="spec-sub-table">
+                            <div class="spec-sub-row">
+                                <div class="spec-sub-column">
+                                    <div class="cell">
+                                        <input type="number" name="hingesNumber" min="1" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- <table class="specifications-table">
+        <!-- <table class="specifications-table">
         <thead>
             <tr>
                 <th>Размер на рамката (mm)</th>
@@ -236,14 +240,13 @@
         </tbody>
     </table>
     <button id="addBtn">+</button> -->
-    <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
-    <button id="cancelBtn">Откажи</button>
-    <button id="submitBtn">Изпрати</button>
+        <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
+        <button id="cancelBtn">Откажи</button>
+        <button id="submitBtn">Изпрати</button>
 
-
+    </div>
 
     <style>
-
         .specifications input {
             max-width: 100%;
             padding: 10px;
@@ -267,7 +270,6 @@
         .cell {
             padding: 0px;
             text-align: center;
-            height: 100%;
         }
 
         .spec-sub-table {
@@ -289,8 +291,9 @@
         .spec-sub-table .cell {
             padding: 2px;
             text-align: center;
-            border: 1px solid #e60303;    
-            height: 100%;;
+            border: 1px solid #e60303;
+            height: 100%;
+            ;
         }
 
         .spec-sub-table .cell select {

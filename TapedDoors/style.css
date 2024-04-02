@@ -1,8 +1,6 @@
+
 body {
-  border: 2px solid black;
-  padding: 20px;
-  margin: 5%;
-  border-radius: 5px;
+  margin: 4%;
   justify-content: center;
   align-items: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, cursive;
@@ -25,6 +23,7 @@ td {
 }
 
 /*Form ---------------*/
+
 #name,
 #surname,
 #email,
@@ -32,7 +31,9 @@ td {
   display: block;
   margin-right: 10px;
   width: 80%;
-  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 
@@ -46,15 +47,6 @@ h1 {
   text-align: center;
 }
 
-#name,
-#surname,
-#email,
-#telephone {
-  border-radius: 5px;
-  padding: 3px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
 
 
 /*Form table*/
@@ -320,49 +312,4 @@ select {
   width: 90%;
   display: block;
 
-}
-
-@media only screen and (max-width: 768px) {
-
-  /* Adjust table layout for smaller screens */
-  th,
-  td {
-    display: block;
-    /* Stack headers and content vertically */
-  }
-
-  th {
-    font-weight: bold;
-    /* Distinguish headers on small screens */
-  }
-
-  td:before {
-    content: attr(data-label) ": ";
-    /* Add labels before content */
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  [data-label] {
-    display: block;
-  }
-
-  /* Adjust nested inputs and select widths */
-  .hingesNumber2 input,
-  .hingesNumber3 input,
-  select {
-    width: 100%;
-  }
-
-  .color select {
-    width: calc(100% - 20px);
-    /* Account for padding */
-  }
-
-  /* Remove margins from 'above60' and 'under60' classes (if used) */
-  .above60,
-  .under60 {
-    margin: 0;
-  }
 }
