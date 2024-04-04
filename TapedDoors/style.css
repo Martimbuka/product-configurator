@@ -3,14 +3,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, cursive;
 }
 
 .container {
   max-width: 700px;
   width: 100%;
-  padding: 25 30px;
+  padding: 25 30px;;
 }
 
 .container .title {
@@ -103,6 +102,17 @@ form .buttons .cancel-button input:hover {
   background: #b31a2b;
 }
 
+/*Images*/
+
+.container-images {
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.container-images .image-details {
+  width: calc(100% / 2 - 20px);
+}
+
 
 @media (max-width: 584px) {
   .container form .user-details .input-box {
@@ -119,6 +129,8 @@ form .buttons .cancel-button input:hover {
     width: 100%;
     margin: 5px;
   }
+
+
 
 
 }
