@@ -1,12 +1,130 @@
 
 body {
-  margin: 4%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, cursive;
 }
 
-table {
+.container {
+  max-width: 700px;
+  width: 100%;
+  padding: 25 30px;
+}
+
+.container .title {
+  font-size: 25px;
+  position: relative;
+}
+
+.container .title::before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  background: #d1202c;
+}
+
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 15px 15px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 10px;
+  width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #d1202c;
+}
+
+.container form .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .buttons .cancel-button,
+form .buttons .submit-button {
+  width: calc(50% / 2 - 10px);
+}
+
+form .buttons .submit-button input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #11bf14;
+}
+
+form .buttons .submit-button input:hover {
+  background: #0f9d12;
+}
+
+form .buttons .cancel-button input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #d1202c;
+}
+
+form .buttons .cancel-button input:hover {
+  background: #b31a2b;
+}
+
+
+@media (max-width: 584px) {
+  .container form .user-details .input-box {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .container form .buttons {
+    display: block;
+  }
+
+  form .buttons .cancel-button,
+  form .buttons .submit-button {
+    width: 100%;
+    margin: 5px;
+  }
+
+
+}
+
+
+/* table {
   border-collapse: collapse;
   width: 100%;
 }
@@ -14,17 +132,11 @@ table {
 .form-table {
   width: 90%;
   margin: 20px auto;
-}
-
-th,
-td {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
+} */
 
 /*Form ---------------*/
 
-#name,
+/* #name,
 #surname,
 #email,
 #telephone {
@@ -45,12 +157,12 @@ form {
 
 h1 {
   text-align: center;
-}
+} */
 
 
 
 /*Form table*/
-.form-table {
+/* .form-table {
   border: none;
 }
 
@@ -69,7 +181,7 @@ h1 {
 .required:after {
   content: " *";
   color: red;
-}
+} */
 
 /*
         ----------------------------*/
@@ -80,7 +192,7 @@ img {
 }
 
 /* Create three columns of images */
-.row {
+/* .row {
   display: flex;
 }
 
@@ -92,7 +204,6 @@ img {
 
 
 
-/* Clearfix (clear floats) */
 .row::after {
   content: "";
   clear: both;
@@ -128,7 +239,7 @@ img {
 
 .desc-column {
   margin: 1%;
-}
+} */
 
 /*---------------------*/
 

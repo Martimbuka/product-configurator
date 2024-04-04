@@ -15,9 +15,39 @@
 
     <div class="container">
 
-        <h1>Бланка за поръчка на тапетни врати</h1>
+        <h1 class="title">Бланка за поръчка на тапетни врати</h1>
 
-        <div class="form-container">
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Име</span>
+                    <input type="text" placeholder="Въведете Вашето име" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Фамилия</span>
+                    <input type="text" placeholder="Въведете Вашата фамилия" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Имейл</span>
+                    <input type="email" placeholder="Въведете Вашия имейл" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Телефонен номер</span>
+                    <input type="text" placeholder="Въведете Вашия телефонен номер" required>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="cancel-button">
+                    <input type="reset" value="Откажи">
+                </div>
+                <div class="submit-button">
+                    <input type="submit" value="Изпрати">
+                </div>
+            </div>
+
+        </form>
+
+        <!-- <div class="form-container">
             <form method="post">
                 <table class="form-table">
                     <tr>
@@ -159,7 +189,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- <table class="specifications-table">
         <thead>
@@ -240,9 +270,9 @@
         </tbody>
     </table>
     <button id="addBtn">+</button> -->
-        <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
+        <!-- <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
         <button id="cancelBtn">Откажи</button>
-        <button id="submitBtn">Изпрати</button>
+        <button id="submitBtn">Изпрати</button> -->
 
     </div>
 
