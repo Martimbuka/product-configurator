@@ -41,32 +41,112 @@
                 <div class="info">
                     <img src="./img/whole.jpg">
                 </div>
-                 <div class="image-slider">
-                    <input id="slide1" type="radio" name="controls"  checked="checked"/>
-                    <input id="slide2" type="radio" name="controls"/>
-                    
+                <div class="image-slider">
+                    <input id="slide1" type="radio" name="controls" checked="checked" />
+                    <input id="slide2" type="radio" name="controls" />
+
 
                     <label for="slide1" class="nav-dot"></label>
                     <label for="slide2" class="nav-dot"></label>
-                    
 
-                    <label for="slide1" class="left-arrow"> < </label>
-                    <label for="slide2" class="left-arrow"> < </label>
-                    
 
-                    <label for="slide1" class="right-arrow"> > </label>
-                    <label for="slide2" class="right-arrow"> > </label>
-                    
+                    <label for="slide1" class="left-arrow">
+                        < </label>
+                            <label for="slide2" class="left-arrow">
+                                < </label>
 
-                    <div class="slider">
-                        <ul>
-                            <li>
-                                <img src="./img/whole.jpg" />
-                            </li>
-                            <li>
-                            </li>
-                        </ul>
+
+                                    <label for="slide1" class="right-arrow"> > </label>
+                                    <label for="slide2" class="right-arrow"> > </label>
+
+
+                                    <div class="slider">
+                                        <ul>
+                                            <li>
+                                                <img src="./img/whole.jpg" />
+                                            </li>
+                                            <li>
+                                            </li>
+                                        </ul>
+                                    </div>
+                </div>
+            </div>
+
+            <div class="spec-table">
+                <div class="box frame-size">
+                    <div class="sub-title">Размер на рамката</div>
+                    <div class="sub">
+                        <div class="sub-box width">Широчина</div>
+                        <div class="sub-box height">Височина</div>
+                        <div class="sub-box LB">LB, mm</div>
+                        <div class="sub-box HB">HB, mm</div>
+                        <input class="sub-box input-frame-size" type="text" name="frameSize" required>
+                        <input class="sub-box input-frame-size" type="text" name="frameSize" required>
                     </div>
+                </div>
+                <div class="box opening-direction">
+                    <div class="sub-title">Посока на отваряне</div>
+                    <div class="sub">
+                        <select class="sub-box">
+                            <option value="навътре">Навътре</option>
+                            <option value="навън">Навън</option>
+                        </select>
+                        <select class="sub-box">
+                            <option value="дясна">Дясна</option>
+                            <option value="лява">Лява</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box number-hinges">
+                    <div class="sub-title">Брой панти</div>
+                    <div class="sub">
+                        <div class="sub-box two-hinges">2 панти</div>
+                        <div class="sub-box three-hinges-or-more">3+ панти</div>
+                        <div class="sub-box under-60">Врата ≤ 60kg</div>
+                        <div class="sub-box above-60">Врата ≥ 60kg</div>
+                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1" >
+                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1" >
+                    </div>
+                </div>
+                <div class="box wing">
+                    <div class="sub-title">Крило</div>
+                    <div class="sub">
+                        <div class="info-wing">МДФ, грундиран</div>
+                        <div class="required-wing">*задължително се добавя брава</div>
+                        <select>
+                            <option value="да">Да</option>
+                            <option value="не">Не</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box lock-magnetic-counter">
+                    <div class="sub-title">Брава с магнитен насрещник</div>
+                    <div class="sub">
+                        <select>
+                            <option value="CB">CB</option>
+                            <option value="PC">PC</option>
+                            <option value="WC">WC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box seal">
+                    <div class="sub-title">Уплътнение</div>
+                    <div class="sub">
+                        <div class="color">Цвят</div>
+                        <select>
+                            <option value="бял">Бял</option>
+                            <option value="сив">Сив</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box count">
+                    <div class="sub-title">Количество</div>
+                    <div class="sub">
+                        <input type="number" name="quantity" min="1" required>
+                    </div>  
+                </div>
+                <div class="box delete-table">
+                    <div class="delete-button">X</div>
                 </div>
             </div>
 
@@ -81,149 +161,6 @@
 
         </form>
 
-        <!-- <div class="form-container">
-            <form method="post">
-                <table class="form-table">
-                    <tr>
-                        <th class="required">Име</th>
-                        <th class="required">Фамилия</th>
-                    </tr>
-                    <tr>
-                        <td><input id="name" name="name" required></td>
-                        <td><input id="surname" name="surname" required></td>
-                    </tr>
-                    <tr>
-                        <th class="required">Имейл </span></th>
-                        <th class="required">Телефонен номер </th>
-                    </tr>
-                    <tr>
-                        <td><input id="email" name="email" required placeholder="example@prodes.bg"></td>
-                        <td><input id="telephone" name="telephone" required placeholder="+359"></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-
-        <div class="images">
-            <div class="table-imgs">
-                <div class="row">
-                    <div class="column">
-                        <img src="./img/1.jpg" alt="1" style="padding-bottom: 10%;">
-                        <img src="./img/4.jpg" alt="4">
-                    </div>
-                    <div class="column">
-
-                    </div>
-                    <div class="column">
-                        <img src="./img/razmeri.jpg" alt="Size">
-                        <img id="img-openingDirection" src="./img/openingDirection.jpg" alt="Opening direction">
-                    </div>
-
-                </div>
-            </div>
-            <div class="desc">
-                <div class="desc-row">
-                    <div class="desc-column">
-                        <p id="exclamation-mark">!</p>
-
-                    </div>
-                    <div class="desc-column">
-                        <p id="description">Ако желаете изработка на крило, задължително се добавя и брава с магнитен
-                            насрещник (моля, посочете необходимия вид на заключване).
-                            Можете да поръчате и само брава с магнитен насрещник, без крило. В комплекта за всяка врата
-                            са
-                            включени монтажни елементи за каса.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-        <h2>Спецификации</h2>
-
-        <div class="specifications">
-            <div class="specifications-row">
-                <div class="specifications-column">
-                    <div class="cell">
-                        <p>Размер на рамката (mm)</p>
-                        <div class="spec-sub-table">
-                            <div class="spec-sub-row">
-                                <div class="spec-sub-column">
-                                    <div class="cell">Широчина</div>
-                                </div>
-                                <div class="spec-sub-column">
-                                    <div class="cell">Височина</div>
-                                </div>
-                            </div>
-                            <div class="spec-sub-row">
-                                <div class="spec-sub-column">
-                                    <div class="cell">LB, mm</div>
-                                </div>
-                                <div class="spec-sub-column">
-                                    <div class="cell">HB, mm</div>
-                                </div>
-                            </div>
-                            <div class="spec-sub-row">
-                                <div class="spec-sub-column">
-                                    <div class="cell"><input type="text" name="frameSize" required></div>
-                                </div>
-                                <div class="spec-sub-column">
-                                    <div class="cell"><input type="text" name="frameSize" required></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div class="specifications-columns">
-                    <div class="cell">
-                        <p>Посока на отваряне</p>
-                        <div class="spec-sub-table">
-                            <div class="spec-sub-row">
-                                <div class="spec-sub-column">
-                                    <div class="cell">
-                                        <select name="openingDirection" id="select">
-                                            <option value="inside">Навътре</option>
-                                            <option value="outside">Навън</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="spec-sub-row">
-                                <div class="spec-sub-column">
-                                    <div class="cell">
-                                        <select name="openingDirection" id="select">
-                                            <option value="inside">Дясна</option>
-                                            <option value="outside">Лява</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="specifications-columns">
-                    <div class="cell">
-                        <p>Брой панти</p>
-                        <div class="spec-sub-table">
-                            <div class="spec-sub-row">
-                                <div class="spec-sub-column">
-                                    <div class="cell">
-                                        <input type="number" name="hingesNumber" min="1" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <!-- <table class="specifications-table">
         <thead>
@@ -311,61 +248,32 @@
     </div>
 
     <style>
-        
-        /* .specifications input {
-            max-width: 100%;
-            padding: 10px;
-            margin: 5px;
-            width: 80px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        .specifications {
-            display: flex;
-            flex-direction: column;
-            width: 80%;
-            border: 1px solid #ccc;
-        }
-
-        .specifications-row {
-            display: flex;
-        }
-
-        .cell {
-            padding: 0px;
-            text-align: center;
-        }
-
-        .spec-sub-table {
+        .delete-table {
             border: none;
-            margin: 0;
-            padding: 0;
+            background-color: inherit;
         }
 
-        .spec-sub-row {
-            display: flex;
-        }
-
-        .spec-sub-column {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .spec-sub-table .cell {
-            padding: 2px;
+        .delete-table .delete-button {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
             text-align: center;
-            border: 1px solid #e60303;
-            height: 100%;
-            ;
+            line-height: 30px;
         }
 
-        .spec-sub-table .cell select {
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        } */
+        .delete-table .delete-button:hover {
+            background-color: darkred;
+        }
+
+        .delete-table .delete-button:active {
+            background-color: rgb(218, 2, 2);
+        }
+
+
     </style>
     <script>
         var myTable = document.getElementById("myTable");
