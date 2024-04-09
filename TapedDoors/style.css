@@ -66,49 +66,7 @@ form .user-details .input-box {
   border-color: #d1202c;
 }
 
-.container form .buttons {
-  display: flex;
-  justify-content: space-between;
-}
 
-form .buttons .cancel-button,
-form .buttons .submit-button {
-  width: calc(50% / 2 - 10px);
-}
-
-form .buttons .submit-button input {
-  height: 100%;
-  width: 100%;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 8px;
-  background: #11bf14;
-  border: 1px solid #4d4d4d;
-}
-
-form .buttons .submit-button input:hover {
-  background: #0f9d12;
-}
-
-form .buttons .cancel-button input {
-  height: 100%;
-  width: 100%;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 8px;
-  background: #d1202c;
-  border: 1px solid #4d4d4d;
-}
-
-form .buttons .cancel-button input:hover {
-  background: #b31a2b;
-}
 
 /*Images*/
 
@@ -652,6 +610,15 @@ form .buttons .cancel-button input:hover {
 
 /*Spec table ends ------------------------------------*/
 
+/*Notes*/
+.notes textarea {
+  width: 99%;
+  height: 100px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
 
 /*Media screen for the specification's table 650px*/
 
@@ -726,4 +693,38 @@ form .buttons .cancel-button input:hover {
 
 }
 
+
+form .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form .buttons .submit-button input {
+  display: inline-block;
+  padding: 8px 50px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #999;
+  margin-bottom: 1em;
+  
+}
+
+form .buttons .submit-button input:hover {
+  background-color: #3e8e41;
+}
+
+form .buttons .submit-button input:active {
+  background-color: #3e8e41;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
 

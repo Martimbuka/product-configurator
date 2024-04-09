@@ -154,10 +154,11 @@
                 <button type="button" id="addButton">Добави</button>
             </div>
 
+            <div class="notes">
+                <textarea name="comment" placeholder="Забележки"></textarea>
+            </div>
+
             <div class="buttons">
-                <div class="cancel-button">
-                    <input type="reset" value="Откажи">
-                </div>
                 <div class="submit-button">
                     <input type="submit" value="Изпрати">
                 </div>
@@ -170,6 +171,7 @@
     </div>
 
     <style>
+        
 
     </style>
     <script>
@@ -269,51 +271,6 @@
             }
         
         });
-
-
-
-
-
-
-
-
-
-
-        // var myTable = document.getElementById("myTable");
-        // var addBtn = document.getElementById("addBtn");
-        // var removeBtn = document.getElementById("removeBtn");
-
-
-        // addBtn.addEventListener("click", function () {
-        //     var newRow = myTable.insertRow(-1);
-        //     var frameSizeCell = newRow.insertCell(0);
-        //     var openingDirectionCell = newRow.insertCell(1);
-        //     var hingesNumberCell = newRow.insertCell(2);
-        //     var doorLeafCell = newRow.insertCell(3);
-        //     var magneticLockCell = newRow.insertCell(4);
-        //     var sealCell = newRow.insertCell(5);
-        //     var quantityCell = newRow.insertCell(6);
-        //     var removeCell = newRow.insertCell(7);
-
-
-        //     frameSizeCell.innerHTML = `<td><div>Широчина</div><input type="text" name="frameSize" required placeholder="LB, mm"><div>Височина</div><input type="text" name="frameSize" required placeholder="HB, mm"></td>`;
-        //     openingDirectionCell.innerHTML = `<td><select name="openingDirection"><option value="inside">Навътре</option><option value="outside">Навън</option></select><div class="openingDireciton"><select name="openingDirection"><option value="inside">Дясна</option><option value="outside">Лява</option></select></div></td>`;
-        //     hingesNumberCell.innerHTML = `<td><input type="number" name="hingesNumber" min="1" required></td>`;
-        //     doorLeafCell.innerHTML = `<td><input type="text" name="doorLeaf"></td>`;
-        //     magneticLockCell.innerHTML = `<td><select name="magneticLock"><option value="yes">Да</option><option value="no">Не</option></select></td>`;
-        //     sealCell.innerHTML = `<td><div>Цвят<select name="seal"><option value="white">Бял</option><option value="grey">Сив</option></select></div></td>`;
-        //     quantityCell.innerHTML = `<td><div>Брой<input type="number" name="quantity" min="1" required></div></td>`;
-        //     removeCell.innerHTML = `<td><button id="removeBtn">X</button></td>`;
-
-
-        //     var removeButtons = document.querySelectorAll("#removeBtn");
-        //     for (var i = 0; i < removeButtons.length; i++) {
-        //         var button = removeButtons[i];
-        //         button.addEventListener("click", function (event) {
-        //             event.target.parentElement.parentElement.remove();
-        //         });
-        //     }
-        // });
 
 
 
