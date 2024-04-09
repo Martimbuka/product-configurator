@@ -385,7 +385,7 @@ form .buttons .cancel-button input:hover {
   grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 0.3fr;
   grid-template-rows: 1fr 1fr;
   font-size: 14px;
-  margin: 1em;
+  margin: 1em 0;
 }
 
 .spec-table select {
@@ -410,8 +410,37 @@ form .buttons .cancel-button input:hover {
   width: 100px;
 }
 
+.frame-size {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.opening-direction {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.number-hinges {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.wing {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
 .delete-table {
   grid-column-start: 5;
+  grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 3;
   text-align: center;
@@ -420,6 +449,8 @@ form .buttons .cancel-button input:hover {
 .lock-magnetic-counter {
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .seal {
@@ -568,7 +599,58 @@ form .buttons .cancel-button input:hover {
   background-color: inherit;
 }
 
+#addButton {
+  display: inline-block;
+  padding: 8px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #999;
+  margin-bottom: 1em;
+}
 
+#addButton:hover {
+  background-color: #3e8e41
+}
+
+#addButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+#deleteButton {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #f44336;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #999;
+}
+
+#deleteButton:hover {
+  background-color: #a81409;
+}
+
+#deleteButton:active {
+  background-color: #a81409;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+/*Spec table ends ------------------------------------*/
 
 
 /*Media screen for the specification's table 650px*/
@@ -638,306 +720,10 @@ form .buttons .cancel-button input:hover {
     height: 25px;
   }
 
-}
-
-
-/* table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.form-table {
-  width: 90%;
-  margin: 20px auto;
-} */
-
-/*Form ---------------*/
-
-/* #name,
-#surname,
-#email,
-#telephone {
-  display: block;
-  margin-right: 10px;
-  width: 80%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-
-form {
-  border-bottom: 1px solid black;
-  margin-bottom: 20px;
-}
-
-
-h1 {
-  text-align: center;
-} */
-
-
-
-/*Form table*/
-/* .form-table {
-  border: none;
-}
-
-.form-table th,
-.form-table td {
-  padding: 10px;
-  border: none;
-}
-
-.form-table th {
-  text-align: left;
-  padding-bottom: 0;
-}
-
-
-.required:after {
-  content: " *";
-  color: red;
-} */
-
-/*
-        ----------------------------*/
-
-/*Images --------------------*/
-img {
-  width: 49%;
-}
-
-/* Create three columns of images */
-/* .row {
-  display: flex;
-}
-
-
-.column {
-  float: left;
-  padding: 5px;
-}
-
-
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-#description {
-  margin-top: 0;
-  border: 2px solid rgb(209, 6, 6);
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: justify;
-  font-family: cursive
-}
-
-.images {
-  border-bottom: 1px solid black;
-}
-
-#exclamation-mark {
-  font-size: 50px;
-  color: rgb(209, 6, 6);
-  text-align: center;
-  pointer-events: none;
-}
-
-.desc-row {
-  display: grid;
-  grid-template-columns: 2% 98%;
-  align-items: center;
-}
-
-.desc-column {
-  margin: 1%;
-} */
-
-/*---------------------*/
-
-/*Specifications ----------------------*/
-h2 {
-  text-align: center;
-}
-
-/* #koloni {
-  justify-content: center;
-  align-items: center;
-}
-
-#select {
-  width: 100px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  cursor: pointer;
-  border-radius: 8px;
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-#select:hover {
-  border-color: #999;
-}
-
-#addBtn {
-  margin-top: 10px;
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 8px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  width: 27px;
-  height: 27px;
-  font-weight: bold;
-}
-
-@keyframes buttonClickAdd {
-  from {
-    background-color: #4CAF50;
-    scale: 1;
+  .add-button {
+    text-align: center;
   }
 
-  to {
-    background-color: #45a049;
-    scale: 0.9;
-  }
-}
-
-#addBtn:active {
-  animation: buttonClick 0.5s;
-}
-
-#addBtn:hover {
-  background-color: #45a049;
-}
-
-.openingDireciton {
-  margin-top: 10px;
 }
 
 
-@keyframes buttonClickRemove {
-  from {
-    scale: 1;
-  }
-
-  to {
-    scale: 0.9;
-  }
-}
-
-#removeBtn:active {
-  animation: buttonClickRemove 0.5s;
-}
-
-
-input[type="text"],
-input[type="number"],
-select {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-} 
-
-.hingesNumber2 input,
-.hingesNumber3 input {
-  width: 40%;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.count {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.color select {
-  width: auto;
-}
-
-#removeBtn {
-  padding: 5px 10px;
-  background-color: #e03333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#removeBtn:hover {
-  background-color: #c02929;
-}
-
-.above60 {
-  margin: 10px;
-}
-
-.under60 {
-  margin: 10px;
-} */
-
-/*-------------------------------------*/
-
-
-/* #submitBtn {
-  padding: 5px 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 30px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 15px;
-  float: inline-end;
-
-}
-
-#submitBtn:hover {
-  background-color: #45a049;
-}
-
-#cancelBtn {
-  padding: 5px 10px;
-  background-color: #e03333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 30px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 15px;
-
-}
-
-#cancelBtn:hover {
-  background-color: #c02929;
-}
-
-
-
-#notes {
-  margin-top: 10px;
-
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 90%;
-  display: block;
-
-} */

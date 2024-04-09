@@ -145,9 +145,9 @@
                         <input type="number" name="quantity" min="1" required>
                     </div>
                 </div>
-                <div class="box delete-table">
+                <!-- <div class="box delete-table">
                     <div id="deleteButton" class="delete-button">Изтрий</div>
-                </div>
+                </div> -->
             </div>
 
             <div class="add-button">
@@ -166,179 +166,154 @@
         </form>
 
 
-        <!-- <table class="specifications-table">
-        <thead>
-            <tr>
-                <th>Размер на рамката (mm)</th>
-                <th>Посока на отваряне</th>
-                <th>Брой панти</th>
-                <th>Крило</th>
-                <th>Брава с магнитен насрещник</th>
-                <th>Уплътнение</th>
-                <th>Количество</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody id="myTable">
-            <tr>
-                <td id="koloni">
-                    <div>Широчина</div>
-                    <input type="text" name="frameSize" required placeholder="LB, mm">
-                    <div>Височина</div>
-                    <input type="text" name="frameSize" required placeholder="HB, mm">
-                </td>
-                <td id="koloni">
-                    <select name="openingDirection" id="select">
-                        <option value="inside">Навътре</option>
-                        <option value="outside">Навън</option>
-                    </select>
-                    <div class="openingDireciton">
-                        <select name="openingDirection" id="select">
-                            <option value="inside">Дясна</option>
-                            <option value="outside">Лява</option>
-                        </select>
-                    </div>
-
-                </td>
-                <td id="koloni">
-                    <div class="under60">
-                        <input type="number" name="hingesNumber2" min="1" required placeholder="2 - Врата ≤ 60кг">
-                    </div>
-                    <div class="above60">
-                        <input type="number" name="hingesNumber3" min="1" required placeholder="3 - Врата ≥ 60кг">
-                    </div>
-                </td>
-                <td id="koloni">
-                    <input type="text" name="doorLeaf">
-                </td>
-                <td id="koloni">
-                    <select name="magneticLock" id="select">
-                        <option value="CB">CB</option>
-                        <option value="PC">PC</option>
-                        <option value="WC">WC</option>
-
-                    </select>
-                </td>
-                <td id="koloni">
-                    <div class="color">
-                        <div class="select_mate" data-mate-select="active">
-                            <select name="" onchange="" onclick="return false;" id="select">
-                                <option value="">Цвят </option>
-                                <option value="1">Бял</option>
-                                <option value="2">Сив</option>
-                            </select>
-                        </div>
-
-
-                </td>
-                <td id="koloni">
-                    <div>
-                        <input type="number" name="quantity" min="1" required placeholder="брой">
-                    </div>
-                </td>
-                <td id="koloni">
-                    <button id="removeBtn">X</button>
-                </td>
-            </tr>
-
-
-        </tbody>
-    </table>
-    <button id="addBtn">+</button> -->
-        <!-- <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Забележки"></textarea>
-        <button id="cancelBtn">Откажи</button>
-        <button id="submitBtn">Изпрати</button> -->
 
     </div>
 
     <style>
-        #addButton {
-            display: inline-block;
-            padding: 8px 10px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #04AA6D;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 6px #999;
-            margin-bottom: 1em;;
-        }
 
-        #addButton:hover {
-            background-color: #3e8e41
-        }
-
-        #addButton:active {
-            background-color: #3e8e41;
-            box-shadow: 0 3px #666;
-            transform: translateY(4px);
-        }
-
-        #deleteButton {
-            display: inline-block;
-            padding: 4px 12px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #f44336;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 6px #999;
-        }
-
-        #deleteButton:hover {
-            background-color: #a81409;
-        }
-
-        #deleteButton:active {
-            background-color: #a81409;
-            box-shadow: 0 3px #666;
-            transform: translateY(4px);
-        }
     </style>
     <script>
-        var myTable = document.getElementById("myTable");
-        var addBtn = document.getElementById("addBtn");
-        var removeBtn = document.getElementById("removeBtn");
 
+        var addButton = document.getElementById("addButton");
+        var deleteButton = document.getElementById("deleteButton");
 
-        addBtn.addEventListener("click", function () {
-            var newRow = myTable.insertRow(-1);
-            var frameSizeCell = newRow.insertCell(0);
-            var openingDirectionCell = newRow.insertCell(1);
-            var hingesNumberCell = newRow.insertCell(2);
-            var doorLeafCell = newRow.insertCell(3);
-            var magneticLockCell = newRow.insertCell(4);
-            var sealCell = newRow.insertCell(5);
-            var quantityCell = newRow.insertCell(6);
-            var removeCell = newRow.insertCell(7);
+        addButton.addEventListener("click", function () {
+            var specTable = document.querySelector(".spec-table");
+            var newRow = document.createElement("div");
+            newRow.classList.add("spec-table");
+            newRow.innerHTML = `
+                <div class="box frame-size">
+                    <div class="sub-title">Размер на рамката</div>
+                    <div class="sub">
+                        <div class="sub-box width">Широчина</div>
+                        <div class="sub-box height">Височина</div>
+                        <div class="sub-box LB">LB, mm</div>
+                        <div class="sub-box HB">HB, mm</div>
+                        <input class="sub-box input-frame-size" type="text" name="frameSize" required>
+                        <input class="sub-box input-frame-size" type="text" name="frameSize" required>
+                    </div>
+                </div>
+                <div class="box opening-direction">
+                    <div class="sub-title">Посока на отваряне</div>
+                    <div class="sub">
+                        <select class="sub-box">
+                            <option value="навътре">Навътре</option>
+                            <option value="навън">Навън</option>
+                        </select>
+                        <select class="sub-box">
+                            <option value="дясна">Дясна</option>
+                            <option value="лява">Лява</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box number-hinges">
+                    <div class="sub-title">Брой панти</div>
+                    <div class="sub">
+                        <div class="sub-box two-hinges">2 панти</div>
+                        <div class="sub-box three-hinges-or-more">3+ панти</div>
+                        <div class="sub-box under-60">Врата ≤ 60kg</div>
+                        <div class="sub-box above-60">Врата ≥ 60kg</div>
+                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1">
+                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1">
+                    </div>
+                </div>
+                <div class="box wing">
+                    <div class="sub-title">Крило</div>
+                    <div class="sub">
+                        <div class="info-wing">МДФ, грундиран</div>
+                        <div class="required-wing">*задължително се добавя брава</div>
+                        <select>
+                            <option value="да">Да</option>
+                            <option value="не">Не</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box lock-magnetic-counter">
+                    <div class="sub-title">Брава с магнитен насрещник</div>
+                    <div class="sub">
+                        <select>
+                            <option value="CB">CB</option>
+                            <option value="PC">PC</option>
+                            <option value="WC">WC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box seal">
+                    <div class="sub-title">Уплътнение</div>
+                    <div class="sub">
+                        <div class="color">Цвят</div>
+                        <select>
+                            <option value="бял">Бял</option>
+                            <option value="сив">Сив</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box count">
+                    <div class="sub-title">Количество</div>
+                    <div class="sub">
+                        <input type="number" name="quantity" min="1" required>
+                    </div>
+                </div>
+                <div class="box delete-table">
+                    <div id="deleteButton" class="delete-button">Изтрий</div>
+                </div>
+            `;
+            specTable.parentNode.insertBefore(newRow, specTable.nextSibling);
 
-
-            frameSizeCell.innerHTML = `<td><div>Широчина</div><input type="text" name="frameSize" required placeholder="LB, mm"><div>Височина</div><input type="text" name="frameSize" required placeholder="HB, mm"></td>`;
-            openingDirectionCell.innerHTML = `<td><select name="openingDirection"><option value="inside">Навътре</option><option value="outside">Навън</option></select><div class="openingDireciton"><select name="openingDirection"><option value="inside">Дясна</option><option value="outside">Лява</option></select></div></td>`;
-            hingesNumberCell.innerHTML = `<td><input type="number" name="hingesNumber" min="1" required></td>`;
-            doorLeafCell.innerHTML = `<td><input type="text" name="doorLeaf"></td>`;
-            magneticLockCell.innerHTML = `<td><select name="magneticLock"><option value="yes">Да</option><option value="no">Не</option></select></td>`;
-            sealCell.innerHTML = `<td><div>Цвят<select name="seal"><option value="white">Бял</option><option value="grey">Сив</option></select></div></td>`;
-            quantityCell.innerHTML = `<td><div>Брой<input type="number" name="quantity" min="1" required></div></td>`;
-            removeCell.innerHTML = `<td><button id="removeBtn">X</button></td>`;
-
-
-            var removeButtons = document.querySelectorAll("#removeBtn");
-            for (var i = 0; i < removeButtons.length; i++) {
-                var button = removeButtons[i];
+            var deleteButtons = document.querySelectorAll(".delete-button");
+            for (var i = 0; i < deleteButtons.length; i++) {
+                var button = deleteButtons[i];
                 button.addEventListener("click", function (event) {
                     event.target.parentElement.parentElement.remove();
                 });
             }
+        
         });
+
+
+
+
+
+
+
+
+
+
+        // var myTable = document.getElementById("myTable");
+        // var addBtn = document.getElementById("addBtn");
+        // var removeBtn = document.getElementById("removeBtn");
+
+
+        // addBtn.addEventListener("click", function () {
+        //     var newRow = myTable.insertRow(-1);
+        //     var frameSizeCell = newRow.insertCell(0);
+        //     var openingDirectionCell = newRow.insertCell(1);
+        //     var hingesNumberCell = newRow.insertCell(2);
+        //     var doorLeafCell = newRow.insertCell(3);
+        //     var magneticLockCell = newRow.insertCell(4);
+        //     var sealCell = newRow.insertCell(5);
+        //     var quantityCell = newRow.insertCell(6);
+        //     var removeCell = newRow.insertCell(7);
+
+
+        //     frameSizeCell.innerHTML = `<td><div>Широчина</div><input type="text" name="frameSize" required placeholder="LB, mm"><div>Височина</div><input type="text" name="frameSize" required placeholder="HB, mm"></td>`;
+        //     openingDirectionCell.innerHTML = `<td><select name="openingDirection"><option value="inside">Навътре</option><option value="outside">Навън</option></select><div class="openingDireciton"><select name="openingDirection"><option value="inside">Дясна</option><option value="outside">Лява</option></select></div></td>`;
+        //     hingesNumberCell.innerHTML = `<td><input type="number" name="hingesNumber" min="1" required></td>`;
+        //     doorLeafCell.innerHTML = `<td><input type="text" name="doorLeaf"></td>`;
+        //     magneticLockCell.innerHTML = `<td><select name="magneticLock"><option value="yes">Да</option><option value="no">Не</option></select></td>`;
+        //     sealCell.innerHTML = `<td><div>Цвят<select name="seal"><option value="white">Бял</option><option value="grey">Сив</option></select></div></td>`;
+        //     quantityCell.innerHTML = `<td><div>Брой<input type="number" name="quantity" min="1" required></div></td>`;
+        //     removeCell.innerHTML = `<td><button id="removeBtn">X</button></td>`;
+
+
+        //     var removeButtons = document.querySelectorAll("#removeBtn");
+        //     for (var i = 0; i < removeButtons.length; i++) {
+        //         var button = removeButtons[i];
+        //         button.addEventListener("click", function (event) {
+        //             event.target.parentElement.parentElement.remove();
+        //         });
+        //     }
+        // });
 
 
 
