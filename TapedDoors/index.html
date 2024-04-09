@@ -104,8 +104,8 @@
                         <div class="sub-box three-hinges-or-more">3+ панти</div>
                         <div class="sub-box under-60">Врата ≤ 60kg</div>
                         <div class="sub-box above-60">Врата ≥ 60kg</div>
-                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1" >
-                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1" >
+                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1">
+                        <input class="sub-box input-hinges" type="text" name="hingesNumber" min="1">
                     </div>
                 </div>
                 <div class="box wing">
@@ -143,11 +143,15 @@
                     <div class="sub-title">Количество</div>
                     <div class="sub">
                         <input type="number" name="quantity" min="1" required>
-                    </div>  
+                    </div>
                 </div>
                 <div class="box delete-table">
-                    <div class="delete-button">X</div>
+                    <div id="deleteButton" class="delete-button">Изтрий</div>
                 </div>
+            </div>
+
+            <div class="add-button">
+                <button type="button" id="addButton">Добави</button>
             </div>
 
             <div class="buttons">
@@ -248,32 +252,56 @@
     </div>
 
     <style>
-        .delete-table {
-            border: none;
-            background-color: inherit;
-        }
-
-        .delete-table .delete-button {
-            font-size: 20px;
+        #addButton {
+            display: inline-block;
+            padding: 8px 10px;
+            font-size: 16px;
             cursor: pointer;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
             text-align: center;
-            line-height: 30px;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px #999;
+            margin-bottom: 1em;;
         }
 
-        .delete-table .delete-button:hover {
-            background-color: darkred;
+        #addButton:hover {
+            background-color: #3e8e41
         }
 
-        .delete-table .delete-button:active {
-            background-color: rgb(218, 2, 2);
+        #addButton:active {
+            background-color: #3e8e41;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
         }
 
+        #deleteButton {
+            display: inline-block;
+            padding: 4px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #f44336;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px #999;
+        }
 
+        #deleteButton:hover {
+            background-color: #a81409;
+        }
+
+        #deleteButton:active {
+            background-color: #a81409;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
     </style>
     <script>
         var myTable = document.getElementById("myTable");

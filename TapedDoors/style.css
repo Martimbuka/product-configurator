@@ -563,7 +563,82 @@ form .buttons .cancel-button input:hover {
   padding: 0.3em;
 }
 
+.delete-table {
+  border: none;
+  background-color: inherit;
+}
 
+
+
+
+/*Media screen for the specification's table 650px*/
+
+@media (max-width: 650px) {
+  .spec-table {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.1fr;
+  }
+
+
+
+  .frame-size {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .opening-direction {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .number-hinges {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .wing {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .lock-magnetic-counter {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .seal {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .count {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+
+  .delete-table {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    flex-direction: row;
+  }
+
+  .delete-table .delete-button {
+    height: 25px;
+  }
+
+}
 
 
 /* table {
@@ -815,7 +890,7 @@ select {
 /*-------------------------------------*/
 
 
-#submitBtn {
+/* #submitBtn {
   padding: 5px 10px;
   background-color: #4CAF50;
   color: white;
@@ -865,4 +940,4 @@ select {
   width: 90%;
   display: block;
 
-}
+} */
