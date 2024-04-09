@@ -614,6 +614,7 @@ form .user-details .input-box {
 .notes textarea {
   width: 99%;
   height: 100px;
+  padding: 0.5em;
   margin: 20px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -728,3 +729,18 @@ form .buttons .submit-button input:active {
   transform: translateY(4px);
 }
 
+/*footer*/
+footer {
+  padding: 1em;
+  text-align: center;
+  display: inline;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #d1202c;
+}
