@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <!-- Link javascript-->
     <script src="./specTable.js" defer></script>
-    <script src="./app.js"></script>
+    <script type="module" src="./app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <title>Бланка за поръчка на тапетни врати</title>
 </head>
 
@@ -15,6 +17,7 @@
 <body>
 
     <div class="container">
+        <button id="test">Test</button>
 
         <h1 class="title">Бланка за поръчка на тапетни врати</h1>
 
@@ -162,7 +165,7 @@
 
             <div class="buttons">
                 <div class="submit-button">
-                    <input type="submit" value="Изпрати">
+                    <input id="submit" type="submit" value="Изпрати">
                 </div>
             </div>
 

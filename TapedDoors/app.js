@@ -1,17 +1,16 @@
+// import Swal from 'sweetalert2';
 
-const swal = require('sweetalert2');
-
-console.log('sendEmail.js loaded');
-
-//listen for a submit
-document.getElementById('submit').addEventListener('click', submitForm);
-
-console.log('event listener added');
+window.addEventListener('DOMContentLoaded', () => {
+    const submit = document.getElementById("test");
+    if (submit) {
+      submit.addEventListener('click', submitForm);
+    } else {
+      console.error("Submit button with ID 'submit' not found");
+    }
+  });
 
 function submitForm(e) {
-    console.log('submitForm called');
     e.preventDefault();
-    console.log('preventDefault called');
 
     // get input values
     let name = document.getElementById('name').value;
@@ -19,57 +18,47 @@ function submitForm(e) {
     let email = document.getElementById('email').value;
     let phoneNumber = document.getElementById('phoneNumber').value;
 
-    console.log('inputs got');
 
     // check if the inputs are empty
     if (name === '' || surname === '' || email === '' || phoneNumber === '') {
-        swal.fire({
+        Swal.fire({
             title: "Грешка!",
             text: "Моля попълнете всички полета.",
             icon: "error"
         });
-    }
 
-    // check if the phone number is valid
-    if (phoneNumber.length !== 10) {
-        swal.fire({
-            title: "Грешка!",
-            text: "Моля въведете валиден телефонен номер.",
-            icon: "error"
-        });
+        return;
     }
 
     // check if the email is valid
     if (!email.includes('@')) {
-        swal.fire({
+        Swal.fire({
             title: "Грешка!",
             text: "Моля въведете валиден имейл.",
             icon: "error"
         });
+
+        return;
     }
 
-    console.log('inputs checked');
 
     let fullName = name + ' ' + surname;
     let message = `Име: ${name} ${surname}\nИмейл: ${email}\nТелефонен номер: ${phoneNumber}`;
 
-    // send the email
     sendEmail(fullName, email, message);
 }
 
 function sendEmail(fullName, emailInfo, message) {
     console.log('sendEmail called');
-    email.send({
-        Host: "smtp.gmail.com",
-        Username: "martin.jivkov5@gmail.com",
-        Password: "4862!9x9HWD21973",
+    Email.send({
+        SecureToken: "c88d1e8e-5ab9-44cc-b60c-579bd3b4c3e1",
         To: emailInfo,
-        From: "martin.jivkov5@gmail.com",
+        From: "martin.jivkov@prodes.bg",
         Subject: "Бланка за поръчка на тапетни врати",
-        Body: fullName + '\n' + message,
+        Body: fullName + '\n' + message
     }).then(message => {
         if (message === 'OK') {
-            swal.fire({
+            Swal.fire({
                 title: "Успешно изпратена заявка!",
                 text: "Данните за заявката може да видите на имейл.",
                 icon: "success"
