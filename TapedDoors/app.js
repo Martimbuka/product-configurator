@@ -1,4 +1,5 @@
 // import Swal from 'sweetalert2';
+// import Email from './lib/smtp.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     const submit = document.getElementById("test");
@@ -45,6 +46,8 @@ function submitForm(e) {
     let fullName = name + ' ' + surname;
     let message = `Име: ${name} ${surname}\nИмейл: ${email}\nТелефонен номер: ${phoneNumber}`;
 
+      
+
     sendEmail(fullName, email, message);
 }
 
@@ -69,35 +72,3 @@ function sendEmail(fullName, emailInfo, message) {
         }
     });
 }
-
-// function emailSend(e) {
-//     e.preventDefault();
-
-//     let name = document.getElementById('name').value;
-//     let surname = document.getElementById('surname').value;
-//     let email = document.getElementById('email').value;
-//     let phoneNumber = document.getElementById('phoneNumber').value;
-
-//     Email.send({
-//         Host: "smtp.gmail.com",
-//         Username: "martin.jivkov5@gmail.com",
-//         Password: "4862!9x9HWD21973",
-//         To: email,
-//         From: "martin.jivkov5@gamil.com",
-//         Subject: "Бланка за поръчка на тапетни врати",
-//         Body: "Hello world!",
-//     })
-//         .then(message => {
-
-//             if (message === 'OK') {
-//                 fire({
-//                     title: "Успешно изпратена заявка!",
-//                     text: "Данните за заявката може да видите на имейл.",
-//                     icon: "success"
-//                 });
-//             } else {
-//                 console.error(message);
-//                 alert('There was an error sending your mail');
-//             }
-//         });
-// }
