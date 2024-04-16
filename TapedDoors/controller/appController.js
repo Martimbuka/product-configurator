@@ -1,9 +1,12 @@
 const nodemailer = require('nodemailer');
 
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
+
 // send mail from testing accout
-const personData = (req, res) => {
+const sendEmail = async (req, res) => {
     
-    let testAccount = nodemailer.createTestAccount();
+    let testAccount = await nodemailer.createTestAccount();
 
     let transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
@@ -16,7 +19,7 @@ const personData = (req, res) => {
     });
 
     let mailOptions = {
-        from: '"Martin Jivkov" <martin.jivkov5@gmail.com>',
+        from: '"Martin Jivkov" <foo@example.com>',
         to: "martin.jivkov5@gmail.com",
         subject: "Бланка за тапетни врати",
         text: "Бланка за тапетни врати",
@@ -36,5 +39,5 @@ const personData = (req, res) => {
 }
 
 module.exports = {
-    personData
+    sendEmail
 }
