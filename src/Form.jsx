@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser'; // to be used
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import ImageZoom from './components/Image';
 
 const Form = () => {
     const {
@@ -197,6 +198,25 @@ const Form = () => {
                                         ></textarea>
                                     </div>
                                 </div>
+                                {/* Row 4 of form  - Image information*/}
+                                <div className='row formRow'>
+                                    <div className='col'>
+                                        <p className='font-size-16'>
+                                            <ImageZoom
+                                                src='https://cdncloudcart.com/30283/files/image/full-size-description-taped-doors.jpg?1715675674'
+                                                alt='Taped doors'
+                                            />
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* Row 5 of form  - Parameters*/}
+                                <div className='row formRow'>
+                                    <div className='col'>
+                                        <p className='font-size-16'>
+                                            </p>
+                                    </div>
+                                </div>
+                                
 
                                 {/*GDPR checkbox*/}
                                 <div className='row formRow'>
@@ -242,7 +262,9 @@ const Form = () => {
                     </div>
                 </div>
             </div>
-            {/* {alertInfo.display && (
+            {/*Debug purposes*/
+
+            /* {alertInfo.display && (
                 <div
                     className={`alert alert-${alertInfo.type} alert-dismissible mt-5`}
                     role='alert'
