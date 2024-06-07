@@ -1,0 +1,258 @@
+.box {
+  height: 715px;
+  width: 1440px;
+}
+
+.box .group {
+  height: 715px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 1440px;
+}
+
+.box .overlap {
+  height: 715px;
+  position: relative;
+}
+
+.box .div {
+  height: 563px;
+  left: 64px;
+  position: absolute;
+  top: 152px;
+  width: 1298px;
+}
+
+.box .overlap-group-wrapper {
+  height: 440px;
+  left: 23px;
+  position: absolute;
+  top: 123px;
+  width: 1275px;
+}
+
+.box .overlap-group {
+  height: 440px;
+  position: relative;
+}
+
+.box .form-wrapper {
+  height: 440px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1259px;
+}
+
+.box .form {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 24px;
+  height: 440px;
+  position: relative;
+  width: 1259px;
+}
+
+.box .input {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 80px;
+  position: relative;
+  width: 295px;
+}
+
+.box .text-wrapper {
+  align-self: stretch;
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.box .field {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px #0000000d;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 8px;
+  padding: 12px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.box .label {
+  color: #828282;
+  flex: 1;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.box .input-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 80px;
+  position: relative;
+  width: 297px;
+}
+
+.box .input-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 80px;
+  position: relative;
+  width: 626px;
+}
+
+.box .label-wrapper {
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px #0000000d;
+  color: #828282;
+  flex: 1;
+  flex-grow: 1;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  padding: 12px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.box .input-4 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  left: 649px;
+  position: absolute;
+  top: 0;
+  width: 626px;
+}
+
+.box .field-2 {
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px #0000000d;
+  height: 162px;
+  position: relative;
+  width: 100%;
+}
+
+.box .headline {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 624px;
+}
+
+.box .p {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -1.28px;
+  line-height: normal;
+  margin-right: -674px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  width: 1298px;
+}
+
+.box .navigation {
+  background-color: #ffffff;
+  height: 164px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1440px;
+}
+
+.box .element-button {
+  align-items: center;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px #0000000d;
+  display: inline-flex;
+  gap: 8px;
+  justify-content: center;
+  left: 21px;
+  padding: 14px 24px;
+  position: relative;
+  top: 56px;
+}
+
+.box .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.element-button {
+  animation: pulse 2s infinite;
+  transition: background-color 0.3s ease;
+}
+
+.element-button:hover {
+  background-color: #ddd; /* Change as needed */
+}
+
+.element-button:active {
+  background-color: #bbb; /* Change as needed */
+  transform: scale(0.95);
+}
