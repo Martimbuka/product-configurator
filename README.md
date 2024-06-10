@@ -18,9 +18,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
@@ -84,7 +81,7 @@
 
 <!-- Make it in the center -->
 <div align="center">
-    [![Product Name Screen Shot][product-screenshot]](https://www.prodes.bg/product/aluminiev-profil-za-kasa-na-tapetna-vrata-5-300-mm)
+    [![Product Name Screen Shot][product-screenshot]](https://cdncloudcart.com/30283/files/image/product-configurator-example.png?1717747902)
 </div>
 
 The configurator is designed to be used in the firm Prodes for doors specifications and orders. The configurator provides an interface in Bulgarian only. Easy and intuitive selection of specifications for furniture doors, with no competitor in the field.
@@ -98,6 +95,7 @@ The configurator is designed to be used in the firm Prodes for doors specificati
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![Node.js][Node.js]][Node-url]
+* [![EmailJS][EmailJS]][EmailJS-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -157,7 +155,7 @@ npm start
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add new row of product instead of refilling the whole configurator again
+- [x] Add new row of product instead of refilling the whole configurator again
 - [ ] reCaptcha API
 - [ ] 3D visualisation of the product in real-time
 - [ ] Move to Nodemailer instead of EmailJS
@@ -208,8 +206,7 @@ Project Link: [https://github.com/Martimbuka/product-configurator](https://githu
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-* []()
+* [Häfele](https://www.haefele.de/de/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -217,15 +214,9 @@ Project Link: [https://github.com/Martimbuka/product-configurator](https://githu
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Martimbuka/product-configurator.svg?style=for-the-badge
+[issues-url]: https://github.com/Martimbuka/product-configurator/issues
+[license-shield]: https://img.shields.io/github/license/Martimbuka/product-configurator.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [product-screenshot]: https://cdncloudcart.com/30283/files/image/product-configurator-example.png?1717747902
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
