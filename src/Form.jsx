@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser'; // to be used
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import ImageZoom from './components/Image';
+import ProductList from './components/list-view/ProductList';
 
 const Form = () => {
     const {
@@ -217,6 +218,14 @@ const Form = () => {
                                     </div>
                                 </div>
                                 
+                                {/* Product list */}
+                                <div className='row formRow'>
+                                    <div className='col'>
+                                        <p className='font-size-16'>
+                                            <ProductList />
+                                        </p>
+                                    </div>
+                                </div>
 
                                 {/*GDPR checkbox*/}
                                 <div className='row formRow'>
@@ -250,6 +259,8 @@ const Form = () => {
                                     </div>
                                 </div>
 
+                                
+
                                 <button
                                     className='submit-btn btn btn-primary font-size-16 mt-3'
                                     disabled={disabled}
@@ -260,7 +271,7 @@ const Form = () => {
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
             {/*Debug purposes*/
 
