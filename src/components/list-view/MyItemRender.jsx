@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ReactComponent as EditIcon } from '../../assets/edit.svg';
 import { ReactComponent as SaveIcon } from '../../assets/save.svg';
 import { ReactComponent as CancelIcon } from '../../assets/cancel.svg';
+import { ReactComponent as ViewIcon } from '../../assets/view.svg';
 import { confirmAlert } from 'react-confirm-alert';
 
 const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
@@ -68,10 +69,16 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
         <div style={{ width: '100%' }}>
           <div className='view-item'>
             <span>{itemData.ProductID}</span>
-            <span>{itemData.width}</span>
-            <span>{itemData.height}</span>
+            <span>{itemData.frameSize.width}, {itemData.frameSize.height}</span>
+            <span>{itemData.direction}</span>
+            <span>{itemData.hinges}</span>
+            <span>{itemData.wing}</span>
+            <span>{itemData.lock}</span>
+            <span>{itemData.sealColor}</span>
+            <span>{itemData.quantity}</span>
           </div>
           <div className='button-container'>
+            <button type='button' className='view-button' onClick={() => setEditMode(true)}><ViewIcon /></button>
             <button type='button' className='edit-button' onClick={() => setEditMode(true)}><EditIcon /></button>
             {dataLength > 1 && <button type='button' className='delete-button' onClick={handleDelete} style={ {fontWeight: 'bold'}}>X</button>}
           </div>

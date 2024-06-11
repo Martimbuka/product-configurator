@@ -1,3 +1,9 @@
 .view-item span {
-    margin: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.view-item {
+    width: 120%;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }

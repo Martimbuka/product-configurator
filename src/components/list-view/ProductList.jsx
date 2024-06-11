@@ -8,8 +8,16 @@ import '../../style/view-item.css';
 const templateData = [
   {
     ProductID: 1,
-    width: 100,
-    height: 100,
+    frameSize: {
+      width: 100,
+      height: 100
+    },
+    direction: 'Навътре-дясно',
+    hinges: 2,
+    wing: 'Ляво',
+    lock: 'CB',
+    sealColor: 'Бяло',
+    quantity: 1,
     edit: false
   }
 ];
@@ -21,7 +29,6 @@ const MyHeader = () => {
       style={{ fontSize: '18px' }}
       className="pl-3 pb-2 pt-2"
     >
-      <div className="d-flex justify-content-between">
           <div className="header-item">№</div>
           <div className="header-item">Размер на рамката</div>
           <div className="header-item">Посока на отваряне</div>
@@ -30,7 +37,6 @@ const MyHeader = () => {
           <div className="header-item">Брава с магнитен насрещник</div>
           <div className="header-item">Уплътнение</div>
           <div className="header-item">Брой</div>
-        </div>
     </ListViewHeader>
   );
 };
@@ -59,6 +65,16 @@ const ProductList = () => {
   const addProduct = () => {
     const newProduct = {
       ProductID: data.length ? Math.max(...data.map(p => p.ProductID)) + 1 : 1,
+      frameSize: {
+        width: 0,
+        height: 0
+      },
+      direction: '',
+      hinges: 0,
+      wing: '',
+      lock: '',
+      sealColor: '',
+      quantity: 1,
       edit: false
     };
     setData([...data, newProduct]);
