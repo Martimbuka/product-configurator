@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { ReactComponent as EditIcon } from '../../assets/edit.svg';
+import { ReactComponent as SaveIcon } from '../../assets/save.svg';
+import { ReactComponent as CancelIcon } from '../../assets/cancel.svg';
+import { confirmAlert } from 'react-confirm-alert';
 
 const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
   const [editMode, setEditMode] = useState(dataItem.edit || false);
@@ -10,7 +14,22 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
   };
 
   const handleDelete = () => {
-    deleteItem(itemData);
+    confirmAlert({
+      title: 'Изтриване на продукт',
+      message: 'Сигурни ли сте, че искате да изтриете този продукт?',
+      buttons: [
+        {
+          label: 'Да',
+          onClick: () => {
+            deleteItem(itemData);
+          }
+        },
+        {
+          label: 'Не',
+          onClick: () => {}
+        }
+      ]
+    });
   };
 
   const handleChange = (e) => {
@@ -41,8 +60,8 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
             />
           </div>
           <div className='button-container'>
-            <button className='save-button' onClick={handleSave}>Запази</button>
-            <button className='cancel-button' onClick={() => setEditMode(false)}>Откажи</button>
+            <button type='button' className='save-button' onClick={handleSave}><SaveIcon /></button>
+            <button type='button' className='cancel-button' onClick={() => setEditMode(false)}><CancelIcon /></button>
           </div>
         </div>
       ) : (
@@ -53,8 +72,8 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
             <span>{itemData.height}</span>
           </div>
           <div className='button-container'>
-            <button className='edit-button' onClick={() => setEditMode(true)}>Промени</button>
-            {dataLength > 1 && <button className='delete-button' onClick={handleDelete}>Изтрий</button>}
+            <button type='button' className='edit-button' onClick={() => setEditMode(true)}><EditIcon /></button>
+            {dataLength > 1 && <button type='button' className='delete-button' onClick={handleDelete} style={ {fontWeight: 'bold'}}>X</button>}
           </div>
         </div>
       )}
