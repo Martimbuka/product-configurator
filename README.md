@@ -79,9 +79,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- Make it in the center -->
 <div align="center">
-    [![Product Name Screen Shot][product-screenshot]](https://cdncloudcart.com/30283/files/image/product-configurator-example.png?1717747902)
+    <img src="https://cdncloudcart.com/30283/files/image/product-configurator-example.png?1717747902" alt="Example" width="500px" height="400px">
 </div>
 
 The configurator is designed to be used in the firm Prodes for doors specifications and orders. The configurator provides an interface in Bulgarian only. Easy and intuitive selection of specifications for furniture doors, with no competitor in the field.
@@ -129,7 +128,7 @@ To get a local copy up and running follow these simple steps.
 
 - Clone the repository
 ```
-git clone  <git lab template url> <project_name>
+git clone https://github.com/Martimbuka/product-configurator.git
 ```
 - Install dependencies
 ```
@@ -155,7 +154,6 @@ npm start
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add new row of product instead of refilling the whole configurator again
 - [ ] reCaptcha API
 - [ ] 3D visualisation of the product in real-time
 - [ ] Move to Nodemailer instead of EmailJS

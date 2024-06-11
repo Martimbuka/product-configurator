@@ -273,25 +273,6 @@ const Form = () => {
                     </div>
                 </div> 
             </div>
-            {/*Debug purposes*/
-
-            /* {alertInfo.display && (
-                <div
-                    className={`alert alert-${alertInfo.type} alert-dismissible mt-5`}
-                    role='alert'
-                >
-                    {alertInfo.message}
-                    <button
-                        type='button'
-                        className='btn-close'
-                        data-bs-dismiss='alert'
-                        aria-label='Close'
-                        onClick={() =>
-                            setAlertInfo({ display: false, message: '', type: '' })
-                        } // Clear the alert when close button is clicked
-                    ></button>
-                </div>
-            )} */}
         </div>
     );
 };
