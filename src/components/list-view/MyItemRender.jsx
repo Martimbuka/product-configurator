@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { ReactComponent as EditIcon } from '../../assets/edit.svg';
-import { ReactComponent as SaveIcon } from '../../assets/save.svg';
-import { ReactComponent as CancelIcon } from '../../assets/cancel.svg';
-import { ReactComponent as ViewIcon } from '../../assets/view.svg';
+import LockImg from './LockImg';
+import ButtonImg from './ButtonImg';
 import { confirmAlert } from 'react-confirm-alert';
+import Field from './Field';
 
 const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
   const [editMode, setEditMode] = useState(dataItem.edit || false);
@@ -61,28 +60,33 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
             />
           </div>
           <div className='button-container'>
-            <button type='button' className='save-button' onClick={handleSave}><SaveIcon /></button>
-            <button type='button' className='cancel-button' onClick={() => setEditMode(false)}><CancelIcon /></button>
+            <button type='button' className='save-button' onClick={handleSave}><ButtonImg type='save' /></button>
+            <button type='button' className='cancel-button' onClick={() => setEditMode(false)}><ButtonImg type='cancel' /></button>
           </div>
         </div>
       ) : (
         <div style={{ width: '100%' }}>
           <div className='view-item'>
-            <span className='item'>{itemData.ProductID}</span>
-            <span className='item frameSize'>
+            <Field>{itemData.ProductID}</Field>
+            <Field className='item frameSize'>
               <span>Широчина - {itemData.frameSize.width}<span className='unit'>mm</span></span>
               <span>Височина - {itemData.frameSize.height}<span className='unit'>mm</span></span>
-            </span>
-            <span className='item'>{itemData.direction}</span>
-            <span className='item'>{itemData.hinges}</span>
-            <span className='item'>{itemData.wing}</span>
-            <span className='item'>{itemData.lock}</span>
-            <span className='item'>{itemData.sealColor}</span>
-            <span className='item'>{itemData.quantity}</span>
+            </Field>
+            <Field>
+              <span>{itemData.direction.inOut}</span>
+              <span>{itemData.direction.leftRight}</span>
+              </Field>
+            <Field >{itemData.hinges}</Field>
+            <Field>{itemData.wing}</Field>
+            <Field>
+              <span>{itemData.lock}<LockImg lock={itemData.lock}/></span>
+              </Field>
+            <Field>{itemData.sealColor}</Field>
+            <Field>{itemData.quantity}</Field>
           </div>
           <div className='button-container'>
-            <button type='button' className='view-button' onClick={() => setEditMode(true)}><ViewIcon /></button>
-            <button type='button' className='edit-button' onClick={() => setEditMode(true)}><EditIcon /></button>
+            <button type='button' className='view-button' onClick={() => setEditMode(true)}><ButtonImg type='view' /></button>
+            <button type='button' className='edit-button' onClick={() => setEditMode(true)}><ButtonImg type='edit' /></button>
             {dataLength > 1 && <button type='button' className='delete-button' onClick={handleDelete} style={ {fontWeight: 'bold'}}>X</button>}
           </div>
         </div>
