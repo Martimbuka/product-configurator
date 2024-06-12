@@ -7,12 +7,15 @@ import '../../style/view-item.css';
 
 const templateData = [
   {
-    ProductID: 1,
+    ProductID: 'Пример',
     frameSize: {
       width: 100,
       height: 100
     },
-    direction: 'Навътре-дясно',
+    direction: {
+      inOut: 'Навътре',
+      leftRight: 'Дясно'
+    },
     hinges: 2,
     wing: 'Ляво',
     lock: 'CB',
@@ -64,7 +67,10 @@ const ProductList = () => {
         width: 0,
         height: 0
       },
-      direction: '',
+      direction: {
+        inOut: '',
+        leftRight: ''
+      },
       hinges: 0,
       wing: '',
       lock: '',
