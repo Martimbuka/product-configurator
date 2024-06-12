@@ -29,7 +29,10 @@
 .list-view-header .header-item {
   border-left: 1px solid #ddd;
   text-align: center;
+}
 
+.list-view-header .header-item:first-child {
+  border-left: none;
 }
 
 .list-view-item {
@@ -74,9 +77,14 @@
   width: 100%;
   bottom: 0;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   padding: 10px 0;
   display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.add-product-form .add-button {
+  padding: 4px 28px;
 }
 
 

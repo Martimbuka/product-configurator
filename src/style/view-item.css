@@ -1,9 +1,24 @@
-.view-item span {
+.view-item .item {
     border-right: 1px solid #ddd;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.view-item .frameSize {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .view-item {
     width: 120%;
     display: grid;
     grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.view-item span .unit {
+    font-style: italic;
+    font-size: 0.8em;
+    margin-left: 2px;
+    border: none;
 }

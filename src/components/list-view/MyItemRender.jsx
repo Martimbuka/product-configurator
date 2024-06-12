@@ -51,12 +51,12 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
               type="number"
               name='width'
               onChange={handleChange}
-              value={itemData.width}
+              value={itemData.frameSize.width}
             />
             <input
               type="number"
               name='height'
-              value={itemData.height}
+              value={itemData.frameSize.height}
               onChange={handleChange}
             />
           </div>
@@ -68,14 +68,17 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
       ) : (
         <div style={{ width: '100%' }}>
           <div className='view-item'>
-            <span>{itemData.ProductID}</span>
-            <span>{itemData.frameSize.width}, {itemData.frameSize.height}</span>
-            <span>{itemData.direction}</span>
-            <span>{itemData.hinges}</span>
-            <span>{itemData.wing}</span>
-            <span>{itemData.lock}</span>
-            <span>{itemData.sealColor}</span>
-            <span>{itemData.quantity}</span>
+            <span className='item'>{itemData.ProductID}</span>
+            <span className='item frameSize'>
+              <span>Широчина - {itemData.frameSize.width}<span className='unit'>mm</span></span>
+              <span>Височина - {itemData.frameSize.height}<span className='unit'>mm</span></span>
+            </span>
+            <span className='item'>{itemData.direction}</span>
+            <span className='item'>{itemData.hinges}</span>
+            <span className='item'>{itemData.wing}</span>
+            <span className='item'>{itemData.lock}</span>
+            <span className='item'>{itemData.sealColor}</span>
+            <span className='item'>{itemData.quantity}</span>
           </div>
           <div className='button-container'>
             <button type='button' className='view-button' onClick={() => setEditMode(true)}><ViewIcon /></button>
