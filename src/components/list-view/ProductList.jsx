@@ -42,29 +42,24 @@ const MyHeader = () => {
 };
 
 const ProductList = () => {
-  const [data, setData] = useState(templateData);
+  const [rows, setRows] = useState(templateData);
 
   const saveData = (editItem) => {
-    setData(data.map(e => (e.ProductID === editItem.ProductID ? { ...editItem, edit: false } : e)));
+    setRows(rows.map(e => (e.ProductID === editItem.ProductID ? { ...editItem, edit: false } : e)));
   };
 
   const deleteItem = ({ ProductID }) => {
-    // let confirmDelete = window.confirm('Сигурни ли сте, че искате да изтриете този продукт?');
-    // if (!confirmDelete) {
-    //   return;
-    // }
-
     // The sequence of the ProductID remains sequential
     // Example: [1, 2, 3, 4, 5] -> delete 3 -> [1, 2, 3, 4]
     // This is because the ProductID only serves as a unique identifier for the user
-    let newData = data.filter(({ ProductID: id }) => id !== ProductID);
+    let newData = rows.filter(({ ProductID: id }) => id !== ProductID);
     newData = newData.map((item, index) => ({ ...item, ProductID: index + 1 }));
-    setData(newData);
+    setRows(newData);
   };
 
   const addProduct = () => {
     const newProduct = {
-      ProductID: data.length ? Math.max(...data.map(p => p.ProductID)) + 1 : 1,
+      ProductID: rows.length ? Math.max(...rows.map(p => p.ProductID)) + 1 : 1,
       frameSize: {
         width: 0,
         height: 0
@@ -77,20 +72,20 @@ const ProductList = () => {
       quantity: 1,
       edit: false
     };
-    setData([...data, newProduct]);
+    setRows([...rows, newProduct]);
   };
 
  
 
   const MyCustomItem = (props) => (
-    <MyItemRender {...props} saveItem={saveData} deleteItem={deleteItem} dataLength={data.length} />
+    <MyItemRender {...props} saveItem={saveData} deleteItem={deleteItem} dataLength={rows.length} />
   );
 
   return (
     <div>
 
       <ListView
-        data={data}
+        rows={rows}
         item={MyCustomItem}
         style={{ width: '100%', height: 400 }}
         header={MyHeader}
