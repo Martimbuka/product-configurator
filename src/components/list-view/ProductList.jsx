@@ -29,8 +29,8 @@ const MyHeader = () => {
 
   return (
     <ListViewHeader
-      style={{ fontSize: '18px' }}
-      className="pl-3 pb-2 pt-2"
+      style={{}}
+      className=""
     >
           <div className="header-item">№</div>
           <div className="header-item">Размер на рамката</div>

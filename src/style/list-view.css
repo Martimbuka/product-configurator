@@ -249,35 +249,7 @@
   width: 100%;
 }
 
-@media (max-width: 1200px) {
 
-  .list-view-header> :nth-last-child(2),
-  .view-item> :nth-last-child(2),
-  .list-view-header> :nth-last-child(3),
-  .view-item> :nth-last-child(3){
-    display: none;
-  }
-}
-
-@media (max-width: 1000px) {
-
-  .list-view-header> :nth-last-child(4),
-  .list-view-header> :nth-last-child(5) {
-    display: none;
-  }
-}
-
-@media (max-width: 750px) {
-  .list-view-header> :nth-last-child(6) {
-    display: none;
-  }
-}
-
-@media (max-width: 570px) {
-  .list-view-header> :nth-last-child(7) {
-    display: none;
-  }
-}
 
 .button-container {
   display: grid;
@@ -290,4 +262,44 @@
 .button-container .edit-button,
 .button-container .delete-button {
   grid-row:2;
+}
+
+.list-view-header {
+  padding: 8px 0;
+  font-size: 18px;
+}
+
+.list-view-header .header-item {
+  padding: 0px 10px;
+
+}
+
+@media (max-width: 1200px) {
+
+  .list-view-header {
+    font-size: 14px;
+  }
+}
+
+/*Edit mode*/
+.edit-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Ensure this is below the popup z-index to keep the popup clickable */
 }
