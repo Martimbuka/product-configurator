@@ -248,7 +248,7 @@ const Form = () => {
                                                  href='https://www.prodes.bg/page/marketing-policy' 
                                                  target='_blank' 
                                                  rel="noopener noreferrer">
-                                                    Съгласен съм с обработката на лични данни.</a>
+                                                    Приемам условията за обработката на лични данни</a>
                                             </label>
                                             {errors.gdpr && (
                                                 <span className='errorMessage'>

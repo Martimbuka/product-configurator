@@ -282,16 +282,26 @@
 }
 
 /*Edit mode*/
-.edit-popup {
-  position: fixed;
+.list-view-item .editing .edit-popup {
+  /* position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  position: absolute;
+  max-height: 80vh;
+  overflow-y: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
   background-color: white;
   padding: 20px;
   z-index: 1000;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .1fr .2fr .2fr .2fr .2fr .2fr .2fr .2fr;
+  gap: 10px;
 }
 
 .overlay {
@@ -302,4 +312,27 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999; /* Ensure this is below the popup z-index to keep the popup clickable */
+}
+
+.edit-popup .edit-buttons {
+  margin-top: 20px;
+}
+
+.edit-popup input {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 6px;
+}
+
+.edit-popup .title {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 0;
+  /* border-bottom: 1px solid #ccc; */
+}
+
+.frameSize-edit .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .1fr 1fr;
 }

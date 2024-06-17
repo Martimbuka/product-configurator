@@ -1,0 +1,25 @@
+/* DirectionSelector.css */
+.direction-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .direction-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .direction-option {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .direction-option.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  } 

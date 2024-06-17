@@ -9,7 +9,7 @@ const LockImg = ({ lock }) => {
     };
 
     return (
-        <span className='lock-img' style={lockStyle}>
+        <span className="lock-img" style={lockStyle}>
             {lock === 'CB' && <CBIcon />}
             {lock === 'PC' && <PCIcon />}
             {lock === 'WC' && <WCIcon />}

@@ -1,0 +1,18 @@
+.lock-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.lock-option {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lock-option.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}

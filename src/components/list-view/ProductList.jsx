@@ -7,20 +7,20 @@ import '../../style/view-item.css';
 
 const templateData = [
   {
-    ProductID: 'Пример',
+    ProductID: '1',
     frameSize: {
-      width: 100,
-      height: 100
+      width: 0,
+      height: 0
     },
     direction: {
-      inOut: 'Навътре',
-      leftRight: 'Дясно'
+      inOut: '',
+      leftRight: ''
     },
-    hinges: 2,
-    wing: 'Ляво',
-    lock: 'CB',
-    sealColor: 'Бяло',
-    quantity: 1,
+    hinges: 0,
+    wing: '',
+    lock: '',
+    sealColor: '',
+    quantity: 0,
     edit: false
   }
 ];
