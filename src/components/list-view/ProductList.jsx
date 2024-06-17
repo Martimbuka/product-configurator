@@ -61,8 +61,12 @@ const ProductList = () => {
   };
 
   const addProduct = () => {
+    // check if the only product is the template
+    // if it is, the new product will have ProductID 1, instead of NaN
+    let isTemplate = rows.length === 1 && rows[0].ProductID === 'Пример';
+
     const newProduct = {
-      ProductID: rows.length ? Math.max(...rows.map(p => p.ProductID)) + 1 : 1,
+      ProductID: isTemplate ? 1 : rows.length ? Math.max(...rows.map(p => p.ProductID)) + 1 : 1,
       frameSize: {
         width: 0,
         height: 0
@@ -83,6 +87,9 @@ const ProductList = () => {
 
  
 
+  /* The purpose of MyCustomItem is to serve as a wrapper or intermediary
+   that enhances or modifies the props for MyItemRender. It allows
+    for additional logic or data manipulation before rendering MyItemRender */
   const MyCustomItem = (props) => (
     <MyItemRender {...props} saveItem={saveData} deleteItem={deleteItem} dataLength={rows.length} />
   );
