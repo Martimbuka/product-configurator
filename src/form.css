@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  line-height: 26px;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.ContactForm {
+  background-color: #f9f9f9;
+}
+
+/* .container {
+  max-width: 1300px;
+  margin: 0 auto;
+} */
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto
+}
+
+@media (min-width:576px) {
+
+  .container {
+    max-width: 540px
+  }
+}
+
+@media (min-width:768px) {
+
+  .container {
+    max-width: 720px
+  }
+}
+
+@media (min-width:992px) {
+
+  .container {
+    max-width: 960px
+  }
+}
+
+@media (min-width:1200px) {
+
+  .container {
+    max-width: 1140px
+  }
+}
+
+@media (min-width:1400px) {
+
+  .container {
+    max-width: 1320px
+  }
+}
+
+
+
+.text-center {
+  text-align: center !important;
+}
+
+.contactForm {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.form-control {
+  width: calc(100% - 20px); /* 100% - (left padding + right padding + left border + right border) */
+  padding: 10px ;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: calc(1.5em + .75rem + calc(var(--bs-border-width) * 2));
+  max-width: calc(100% - 20px);
+}
+
+.formInput {
+  margin-bottom: 10px;
+}
+
+.col-6 {
+  width: 100%;
+}
+
+.grid-3-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: -5px;
+}
+
+.inputError {
+  margin-bottom: 2px;
+}
+.font-size-16 {
+  font-size: 16px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f11616ca;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #f11616;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

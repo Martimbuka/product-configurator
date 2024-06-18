@@ -4,30 +4,6 @@ body {
   margin: 0;
 }
 
-.App {
-  height: 75vh;
-  margin-top: 15vh;
-}
-
-form {
-  margin-top: 20px;
-}
-
-.formRow {
-  margin: 10px 0 20px 0;
-}
-
-.formInput {
-  padding: 15px 10px;
-}
-
-.errorMessage {
-  color: #f45532;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-}
-
 .submit-btn {
   padding: 15px 50px;
   border-radius: 10px;
