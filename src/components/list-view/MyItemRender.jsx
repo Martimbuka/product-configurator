@@ -75,8 +75,8 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
             <Field>{itemData.quantity}</Field>
           </div>
           <div className='button-container'>
-            <button type='button' className='view-button' onClick={() => setEditMode(true)}><ButtonImg type='view' /></button>
-            <button type='button' className='edit-button' onClick={() => setEditMode(true)}><ButtonImg type='edit' /></button>
+            {/* <button type='button' className='view-button' onClick={() => setEditMode(true)}><ButtonImg type='view' /></button> */}
+            <button type='button' className='edit-button' onClick={() => setEditMode(true)}><ButtonImg type='edit-2' /></button>
             {dataLength > 1 && <button type='button' className='delete-button' onClick={handleDelete} style={{ fontWeight: 'bold' }}>X</button>}
           </div>
         </div>

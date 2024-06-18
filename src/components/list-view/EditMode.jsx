@@ -1,4 +1,3 @@
-// src/components/list-view/EditPopup.jsx
 import React from 'react';
 import DirectionSelector from './fields/DirectionSelector';
 import ColorSelector from './fields/ColorSelector';
@@ -26,18 +25,20 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
     const { name, value } = e.target;
     const [parent, child] = name.split('.');
 
+    let newValue = value;
+
     if (child) {
       setTempItemData(prevState => ({
         ...prevState,
         [parent]: {
           ...prevState[parent],
-          [child]: value
+          [child]: newValue
         }
       }));
     } else {
       setTempItemData(prevState => ({
         ...prevState,
-        [name]: value
+        [name]: newValue
       }));
     }
   };
@@ -48,10 +49,22 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
       <div className='frameSize-edit'>
         <div className='title'>Размер на рамката</div>
         <div className='content'>
-          <div>Ширина</div>
+          <div>Широчина</div>
           <div>Височина</div>
-          <input required type='number' name='frameSize.width' onChange={handleChange} placeholder='LB, mm' />
-          <input required type='number' name='frameSize.height' onChange={handleChange} placeholder='HB, mm' />
+          <input
+            required
+            type='number'
+            name='frameSize.width'
+            onChange={handleChange}
+            placeholder='LB, mm'
+          />
+          <input
+            required
+            type='number'
+            name='frameSize.height'
+            onChange={handleChange}
+            placeholder='HB, mm'
+          />
         </div>
       </div>
       <div>
@@ -60,12 +73,23 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
       </div>
       <div>
         <div className='title'>Брой панти</div>
-        {/* It should accept values only from 2 to 10 */}
-        <input required type='number' name='hinges' value={itemData.hinges} onChange={handleChange} />
+        <input
+          required
+          type='number'
+          name='hinges'
+          value={tempItemData.hinges}
+          onChange={handleChange}
+        />
       </div>
       <div>
         <div className='title'>Крило</div>
-        <input required type='text' name='wing' value={itemData.wing} onChange={handleChange} />
+        <input
+          required
+          type='text'
+          name='wing'
+          value={tempItemData.wing}
+          onChange={handleChange}
+          placeholder='MDF, грундиран' />
       </div>
       <div>
         <div className='title'>Брава с магнитен насрещник</div>
@@ -77,7 +101,13 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
       </div>
       <div>
         <div className='title'>Брой</div>
-        <input required type='number' name='quantity' value={itemData.quantity} onChange={handleChange} />
+        <input
+          required
+          type='number'
+          name='quantity'
+          value={tempItemData.quantity}
+          onChange={handleChange}
+        />
       </div>
 
       <div className='edit-buttons'>

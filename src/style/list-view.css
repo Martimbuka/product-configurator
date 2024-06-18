@@ -23,7 +23,7 @@
   /* padding: 8px 16px; */
   border-bottom: 1px solid #ddd;
   display: grid;
-  grid-template-columns: 0.55fr 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.55fr 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr .7fr;
 }
 
 .list-view-header .header-item {
@@ -88,16 +88,6 @@
 }
 
 
-
-
-.list-view-item button.delete {
-  background-color: #dc3545;
-}
-
-.list-view-item button.delete:hover {
-  background-color: #c82333;
-}
-
 .list-view-item button,
 .add-product-form button {
   appearance: button;
@@ -127,7 +117,22 @@
   white-space: nowrap;
 }
 
-.list-view-item button:after,
+.delete-button:after {
+  background-clip: padding-box;
+  border: solid transparent;
+  border-radius: 2px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.cancel-button:after,
+.save-button:after,
 .add-product-form button:after {
   background-clip: padding-box;
   border: solid transparent;
@@ -166,15 +171,17 @@
   background: none;
 }
 
-.list-view-item .edit-button,
+.edit-button {
+  background-color: #1899D6;
+}
+
 .add-button {
   background-color: #1899D6;
 }
 
-.list-view-item .edit-button:after,
 .add-button:after {
   background-color: #1CB0F6;
-}
+} 
 
 .list-view-item .delete-button {
   background-color: #FF3B30;
@@ -253,15 +260,15 @@
 
 .button-container {
   display: grid;
-  grid-template-columns: 0.8fr 1fr 1fr;
+  grid-template-columns: .1fr .8fr;
   grid-template-rows: .2fr 1fr .2fr;
-  width: 15%;
+  width: 10%;
 }
 
-.button-container .view-button,
 .button-container .edit-button,
 .button-container .delete-button {
   grid-row:2;
+  border-radius: 20px;
 }
 
 .list-view-header {
@@ -283,10 +290,6 @@
 
 /*Edit mode*/
 .list-view-item .editing .edit-popup {
-  /* position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   position: fixed;
   overflow-y: auto;
   max-height: 100%;

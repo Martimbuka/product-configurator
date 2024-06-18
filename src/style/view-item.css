@@ -21,6 +21,11 @@
     width: 80px;
 }
 
+.edit-2 svg {
+    height: 40px;
+    width: 80px;
+}
+
 @media (max-width: 1200px) {
     .lock-img svg {
         height: 30px;
