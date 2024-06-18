@@ -5,17 +5,29 @@ import ColorSelector from './fields/ColorSelector';
 import LockSelector from './fields/LockSelector';
 
 const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
+  const [tempItemData, setTempItemData] = React.useState(itemData);
+
+  React.useEffect(() => {
+    setTempItemData(itemData);
+  }, [itemData]);
+
   const handleSave = () => {
-    saveItem(itemData);
+    setItemData(tempItemData);
+    saveItem(tempItemData);
     closePopup();
   };
+
+  const handleCancel = () => {
+    setTempItemData(itemData);
+    closePopup();
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     const [parent, child] = name.split('.');
 
     if (child) {
-      setItemData(prevState => ({
+      setTempItemData(prevState => ({
         ...prevState,
         [parent]: {
           ...prevState[parent],
@@ -23,7 +35,7 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
         }
       }));
     } else {
-      setItemData(prevState => ({
+      setTempItemData(prevState => ({
         ...prevState,
         [name]: value
       }));
@@ -44,7 +56,7 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
       </div>
       <div>
         <div className='title'>Посока на отваряне</div>
-        <DirectionSelector itemData={itemData} setItemData={setItemData} />
+        <DirectionSelector itemData={tempItemData} setItemData={setTempItemData} />
       </div>
       <div>
         <div className='title'>Брой панти</div>
@@ -57,11 +69,11 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
       </div>
       <div>
         <div className='title'>Брава с магнитен насрещник</div>
-        <LockSelector itemData={itemData} setItemData={setItemData} />
+        <LockSelector itemData={tempItemData} setItemData={setTempItemData} />
       </div>
       <div>
         <div className='title'>Уплътнение</div>
-        <ColorSelector itemData={itemData} setItemData={setItemData} />
+        <ColorSelector itemData={tempItemData} setItemData={setTempItemData} />
       </div>
       <div>
         <div className='title'>Брой</div>
@@ -70,7 +82,7 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
 
       <div className='edit-buttons'>
         <button type='button' className='save-button' onClick={handleSave}>Запази</button>
-        <button type='button' className='cancel-button' onClick={closePopup}>Отмени</button>
+        <button type='button' className='cancel-button' onClick={handleCancel}>Отмени</button>
       </div>
     </div>
   );
