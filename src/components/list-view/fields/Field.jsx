@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Field({ className, children }) {
-    return <div className={className}
+function Field({ children }) {
+    return <div className='field'
         style={{
             borderRight: "1px solid #ddd",
             textAlign: "center",
