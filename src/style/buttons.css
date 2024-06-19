@@ -64,7 +64,7 @@
     cursor: pointer;
     font-size: 16px;
     color: red;
-    
+
 }
 
 .btn-delete:hover>.mdi-delete-empty {
@@ -94,22 +94,22 @@
     padding: 10px 0;
     display: flex;
     border-top: 1px solid #ddd;
-  }
-  
-  .add-product-form .add-button {
+}
+
+.add-product-form .add-button {
     padding: 4px 13px;
     background-color: #007bff;
-  }
+}
 
-  @media (max-width: 1400px) {
+@media (max-width: 1400px) {
     .add-product-form .add-button {
         padding: 4px 8px;
-        
+
     }
-  }
-  
-  
-  .add-product-form button {
+}
+
+
+.add-product-form button {
     appearance: button;
     border: solid transparent;
     border-radius: 8px;
@@ -135,14 +135,14 @@
     -webkit-user-select: none;
     vertical-align: middle;
     white-space: nowrap;
-  }
+}
 
-  .add-product-form button:hover {
+.add-product-form button:hover {
     filter: brightness(1.2);
     -webkit-filter: brightness(1.2);
-  }
+}
 
-  .add-product-form button:after {
+.add-product-form button:after {
     background-clip: padding-box;
     border: solid transparent;
     border-radius: 8px;
@@ -154,5 +154,76 @@
     right: 0;
     top: 0;
     z-index: -1;
-  }
+}
 
+.save-button {
+    background-color: #81ea4c;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-weight: bold;
+}
+
+.save-button:hover {
+    background-color: #c5faa9;
+}
+
+.save-button:active {
+    transform: scale(0.95);
+}
+
+.cancel-button {
+    background-color: #f11616;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-weight: bold;
+}
+
+.cancel-button:hover {
+    background-color: #f5c6c7;
+}
+
+.cancel-button:active {
+    transform: scale(0.95);
+}
