@@ -57,6 +57,7 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
             name='frameSize.width'
             onChange={handleChange}
             placeholder='LB, mm'
+            value={tempItemData.frameSize.width === 0 ? '' : tempItemData.frameSize.width}
           />
           <input
             required
@@ -64,6 +65,7 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
             name='frameSize.height'
             onChange={handleChange}
             placeholder='HB, mm'
+            value={tempItemData.frameSize.height === 0 ? '' : tempItemData.frameSize.height}
           />
         </div>
       </div>

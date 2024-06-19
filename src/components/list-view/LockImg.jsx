@@ -5,7 +5,10 @@ import { ReactComponent as WCIcon } from '../../assets/WC.svg';
 
 const LockImg = ({ lock }) => {
     const lockStyle = {
-        marginLeft: '4px'
+        marginLeft: '4px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     };
 
     return (

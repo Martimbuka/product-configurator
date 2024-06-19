@@ -156,6 +156,10 @@
     z-index: -1;
 }
 
+.add-product-form button:active {
+    transform: scale(0.95);
+}
+
 .save-button {
     background-color: #81ea4c;
     border-radius: 8px;
