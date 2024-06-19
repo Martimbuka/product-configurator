@@ -2,6 +2,7 @@ import React from 'react';
 import DirectionSelector from './fields/DirectionSelector';
 import ColorSelector from './fields/ColorSelector';
 import LockSelector from './fields/LockSelector';
+import HingesSelector from './fields/HingesSelector';
 
 const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
   const [tempItemData, setTempItemData] = React.useState(itemData);
@@ -20,6 +21,47 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
     setTempItemData(itemData);
     closePopup();
   }
+
+  const validateFrameSize = (e) => {
+    const { name, value } = e.target;
+    const [, child] = name.split('.');
+
+    if (isNaN(value)) {
+      return;
+    }
+
+    if ((child === "width" || child === 'height') && value >= 0 && value <= 9999) {
+      handleChange(e);
+  }
+
+  return;
+}
+
+const validateHinges = (e) => {
+  const { name, value } = e.target;
+
+  if (isNaN(value)) {
+    return;
+  }
+
+  if (name === 'hinges' && value >= 2 && value <= 9) {
+    handleChange(e);
+    return;
+  }
+}
+
+const validateQuantity = (e) => {
+  const { name, value } = e.target;
+
+  if (isNaN(value)) {
+    return;
+  }
+
+  if (name === 'quantity' && value >= 0 && value <= 9999) {
+    handleChange(e);
+    return;
+  }
+}
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,17 +97,19 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
             required
             type='number'
             name='frameSize.width'
-            onChange={handleChange}
+            onChange={validateFrameSize}
             placeholder='LB, mm'
             value={tempItemData.frameSize.width === 0 ? '' : tempItemData.frameSize.width}
+            className='no-spinners'
           />
           <input
             required
             type='number'
             name='frameSize.height'
-            onChange={handleChange}
+            onChange={validateFrameSize}
             placeholder='HB, mm'
             value={tempItemData.frameSize.height === 0 ? '' : tempItemData.frameSize.height}
+            className='no-spinners'
           />
         </div>
       </div>
@@ -75,18 +119,11 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
       </div>
       <div>
         <div className='title'>Брой панти</div>
-        <input
-          required
-          type='number'
-          name='hinges'
-          value={tempItemData.hinges}
-          onChange={handleChange}
-        />
+        <HingesSelector itemData={tempItemData} setItemData={setTempItemData} />
       </div>
       <div>
         <div className='title'>Крило</div>
         <input
-          required
           type='text'
           name='wing'
           value={tempItemData.wing}
@@ -108,7 +145,8 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
           type='number'
           name='quantity'
           value={tempItemData.quantity}
-          onChange={handleChange}
+          onChange={validateQuantity}
+          className='no-spinners'
         />
       </div>
 

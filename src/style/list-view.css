@@ -151,6 +151,18 @@
   grid-template-rows: .1fr 1fr;
 }
 
+/* Hide arrows in input[type="number"] for Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide arrows in input[type="number"] for Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 @media (max-width: 1400px) {
   .list-view-header {
     grid-template-columns: 0.55fr 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr .78fr;

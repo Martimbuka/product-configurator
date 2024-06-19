@@ -75,7 +75,7 @@ const ProductList = () => {
         inOut: '',
         leftRight: ''
       },
-      hinges: 0,
+      hinges: 2,
       wing: '',
       lock: '',
       sealColor: '',
