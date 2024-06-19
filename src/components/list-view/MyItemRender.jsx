@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import LockImg from './LockImg';
-import ButtonImg from './ButtonImg';
 import { confirmAlert } from 'react-confirm-alert';
 import Field from './fields/Field';
 import EditMode from './EditMode';
 import Overlay from './Overlay';
+import '../../style/buttons.css';
+import Icon from '@mdi/react';
+import { mdiDelete, mdiDeleteEmpty, mdiFileEdit, mdiPencil } from '@mdi/js';
 
 const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
   const [editMode, setEditMode] = useState(dataItem.edit || false);
@@ -76,8 +78,38 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
           </div>
           <div className='button-container'>
             {/* <button type='button' className='view-button' onClick={() => setEditMode(true)}><ButtonImg type='view' /></button> */}
-            <button type='button' className='edit-button' onClick={() => setEditMode(true)}><ButtonImg type='edit-2' /></button>
-            {dataLength > 1 && <button type='button' className='delete-button' onClick={handleDelete} style={{ fontWeight: 'bold' }}>X</button>}
+            <button type='button' className='btn btn-edit' onClick={() => setEditMode(true)}>
+              <Icon
+                path={mdiFileEdit}
+                size={1}
+                color="blue"
+                className='mdi-edit'
+                title={'Редактиране'}
+              />
+              <Icon
+                path={mdiPencil}
+                size={1}
+                color="blue"
+                className='mdi-pencil'
+                title={'Редактиране'}
+              />
+            </button>
+            {dataLength > 1 && <button type='button' className='btn btn-delete' onClick={handleDelete}>
+              <Icon
+                path={mdiDelete}
+                size={1}
+                color="red"
+                className='mdi-delete'
+                title={'Изтриване'}
+              />
+              <Icon
+                path={mdiDeleteEmpty}
+                size={1}
+                color="red"
+                className='mdi-delete-empty'
+                title={'Изтриване'}
+              />
+            </button>}
           </div>
         </div>
       )}

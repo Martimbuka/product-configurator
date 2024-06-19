@@ -1,0 +1,158 @@
+.btn {
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid #bdbdbd;
+    padding: 5px;
+    letter-spacing: 0.25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn-edit {
+    font-size: 16px;
+    color: #007bff;
+}
+
+.btn-edit:hover {
+    background-color: #cce5ff;
+    color: #0056b3;
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.btn-edit>.mdi-pencil {
+    display: none;
+}
+
+.btn-edit:hover>.mdi-pencil {
+    display: block;
+}
+
+.btn-edit:hover>.mdi-edit {
+    display: none;
+}
+
+.btn-edit:active>.mdi-pencil,
+.btn-edit:active>.mdi-edit {
+    transform: scale(0.8);
+}
+
+.btn-delete {
+    font-size: 16px;
+    color: red;
+}
+
+.btn-delete>.mdi-delete-empty {
+    display: none;
+}
+
+.btn-delete:hover {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 6px;
+    padding: 5px;
+    letter-spacing: 0.25px;
+    cursor: pointer;
+    font-size: 16px;
+    color: red;
+    
+}
+
+.btn-delete:hover>.mdi-delete-empty {
+    display: block;
+}
+
+.btn-delete:hover>.mdi-delete {
+    display: none;
+}
+
+.btn-delete:active>.mdi-delete-empty,
+.btn-delete:active>.mdi-delete {
+    transform: scale(0.8);
+}
+
+/************************************/
+/*                                  */
+/*          Add Form                */
+/*                                  */
+/************************************/
+
+.add-product-form {
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: right;
+    padding: 10px 0;
+    display: flex;
+    border-top: 1px solid #ddd;
+  }
+  
+  .add-product-form .add-button {
+    padding: 4px 13px;
+    background-color: #007bff;
+  }
+
+  @media (max-width: 1400px) {
+    .add-product-form .add-button {
+        padding: 4px 8px;
+        
+    }
+  }
+  
+  
+  .add-product-form button {
+    appearance: button;
+    border: solid transparent;
+    border-radius: 8px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0 5px;
+    outline: none;
+    overflow: visible;
+    padding: 4px 8px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .add-product-form button:hover {
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
+  }
+
+  .add-product-form button:after {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-radius: 8px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+

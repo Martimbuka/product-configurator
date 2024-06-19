@@ -229,30 +229,31 @@ const Form = () => {
                         <div className='formRow'>
                             <div className='col'>
                                 <div className='form-check'>
-                                    <input
-                                        type='checkbox'
-                                        name='gdpr'
-                                        /* make it bigger, the checkbox */
-                                        className='me-2 form-check-input'
-                                        id='gdpr'
-                                        {...register('gdpr', {
-                                            required: true,
-                                        })}
-                                    ></input>
-                                    <label
-                                        htmlFor='gdpr'
-                                    >
-                                        <a
-                                            href='https://www.prodes.bg/page/marketing-policy'
-                                            target='_blank'
-                                            rel="noopener noreferrer">
-                                            Приемам условията за обработката на лични данни</a>
-                                    </label>
-                                    {errors.gdpr && (
-                                        <span className='errorMessage'>
-                                            <br />Моля се съгласете с обработката на лични данни
-                                        </span>
-                                    )}
+                                    <div>
+                                        <input
+                                            type='checkbox'
+                                            name='gdpr'
+                                            className='me-2 form-check-input'
+                                            id='gdpr'
+                                            {...register('gdpr', {
+                                                required: true,
+                                            })}
+                                        ></input>
+                                        <label
+                                            htmlFor='gdpr'
+                                        >
+                                            <a
+                                                href='https://www.prodes.bg/page/marketing-policy'
+                                                target='_blank'
+                                                rel="noopener noreferrer">
+                                                Приемам условията за обработката на лични данни</a>
+                                        </label>
+                                        {errors.gdpr && (
+                                            <span className='errorMessage'>
+                                                <br />Моля се съгласете с обработката на лични данни
+                                            </span>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -260,7 +261,7 @@ const Form = () => {
 
 
                         <button
-                            className='submit-btn btn btn-primary font-size-16 mt-3'
+                            className='submit-btn btn-primary font-size-16 mt-3'
                             disabled={disabled}
                             type='submit'
                         >

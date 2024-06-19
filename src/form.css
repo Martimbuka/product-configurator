@@ -118,7 +118,7 @@ textarea.form-control {
 }
 
 .form-check {
-  display: flex;
+  display: grid;
   align-items: center;
 }
 
@@ -126,6 +126,16 @@ textarea.form-control {
   width: 20px;
   height: 20px;
   margin-right: 10px;
+}
+
+.form-check label {
+  font-size: 16px;
+  cursor: pointer;
+  height: 20px;
+}
+
+.form-check label a {
+  color: blue;
 }
 
 .submit-btn {
@@ -136,6 +146,7 @@ textarea.form-control {
   border-radius: 4px;
   cursor: pointer;
   background-color: #f11616ca;
+  display: inline-block;
   color: white;
 }
 
