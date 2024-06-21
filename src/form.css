@@ -25,6 +25,11 @@ body {
   margin-left: auto
 }
 
+.title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 /* @media (min-width:576px) {
 
   .container {

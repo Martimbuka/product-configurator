@@ -6,7 +6,7 @@
 .view-item {
     width: 92%;
     display: grid;
-    grid-template-columns: 0.3fr 1fr 9rem 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.3fr 1fr 144px 0.5fr 1fr 1fr 1fr 1fr;
 }
 
 .btn-view-item {
@@ -62,13 +62,13 @@
     }
 
     .view-item {
-        grid-template-columns: 0.31fr 1fr 9rem 0.5fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 0.31fr 1fr 144px 0.5fr 1fr 1fr 1fr 1fr;
     }
 }
 
 @media (max-width: 992px) {
     .view-item {
-        grid-template-columns: 0.32fr 1fr 9rem 0.5fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 0.32fr 1fr 144px 0.5fr 1fr 1fr 1fr 1fr;
     }
 
     .button-container {
