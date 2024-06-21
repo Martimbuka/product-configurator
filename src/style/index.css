@@ -31,3 +31,7 @@ Could you make it bigger size? */
   border-width: 2px;
 }
 
+.form-check input {
+  -webkit-appearance: checkbox;
+}
+
