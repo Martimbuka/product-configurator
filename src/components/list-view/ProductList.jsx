@@ -12,10 +12,7 @@ const templateData = [
       width: 0,
       height: 0
     },
-    direction: {
-      inOut: '',
-      leftRight: ''
-    },
+    direction: '',
     hinges: 0,
     wing: '',
     lock: '',
@@ -36,7 +33,7 @@ const MyHeader = () => {
           <div className="header-item">Размер на рамката</div>
           <div className="header-item">Посока на отваряне</div>
           <div className="header-item">Брой панти</div>
-          <div className="header-item">Крило</div>
+          <div className="header-item">Крило<div className='subtitle'>MDF, грундиран</div></div>
           <div className="header-item">Брава с магнитен насрещник</div>
           <div className="header-item">Уплътнение</div>
           <div className="header-item">Брой</div>
@@ -71,10 +68,7 @@ const ProductList = () => {
         width: 0,
         height: 0
       },
-      direction: {
-        inOut: '',
-        leftRight: ''
-      },
+      direction: '',
       hinges: 2,
       wing: '',
       lock: '',

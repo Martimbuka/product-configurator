@@ -15,12 +15,6 @@ const HingesSelector = ({ itemData, setItemData }) => {
     return (
         <div className="hinges-selector">
             <div
-                className={`hinges-option ${selectedHinges === 2 ? "selected" : ""}`}
-                onClick={() => handleHingesChange(2)}
-            >
-                2
-            </div>
-            <div
                 className={`hinges-option ${selectedHinges === 3 ? "selected" : ""}`}
                 onClick={() => handleHingesChange(3)}
             >

@@ -1,16 +1,16 @@
-.hinges-selector {
+.wing-selector {
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
-}
-
-.hinges-option {
+  }
+  
+  .wing-option {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.hinges-option.selected {
+  }
+  
+  .wing-option.selected {
     background-color: #007bff;
     color: white;
     border-color: #007bff;

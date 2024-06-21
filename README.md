@@ -81,7 +81,6 @@
 ## About The Project
 
 <div align="center">
-    <!--the image is inside folder images/screenshot.png  -->
     <img 
      src="images/example.png"
      alt="Example" width="500px" height="600px">

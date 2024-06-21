@@ -3,6 +3,7 @@ import DirectionSelector from './fields/DirectionSelector';
 import ColorSelector from './fields/ColorSelector';
 import LockSelector from './fields/LockSelector';
 import HingesSelector from './fields/HingesSelector';
+import WingSelector from './fields/WingSelector';
 
 const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
   const [tempItemData, setTempItemData] = React.useState(itemData);
@@ -35,19 +36,6 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
   }
 
   return;
-}
-
-const validateHinges = (e) => {
-  const { name, value } = e.target;
-
-  if (isNaN(value)) {
-    return;
-  }
-
-  if (name === 'hinges' && value >= 2 && value <= 9) {
-    handleChange(e);
-    return;
-  }
 }
 
 const validateQuantity = (e) => {
@@ -123,12 +111,7 @@ const validateQuantity = (e) => {
       </div>
       <div>
         <div className='title'>Крило</div>
-        <input
-          type='text'
-          name='wing'
-          value={tempItemData.wing}
-          onChange={handleChange}
-          placeholder='MDF, грундиран' />
+        <WingSelector itemData={tempItemData} setItemData={setTempItemData} />
       </div>
       <div>
         <div className='title'>Брава с магнитен насрещник</div>

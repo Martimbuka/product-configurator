@@ -26,6 +26,12 @@ const ColorSelector = ({ itemData, setItemData }) => {
             >
                 Сивo
             </div>
+            <div
+                className={`color-option ${selectedColor === "Черно" ? "selected" : ""}`}
+                onClick={() => handleColorChange("Черно")}
+            >
+                Черно
+            </div>
         </div>
     );
 };

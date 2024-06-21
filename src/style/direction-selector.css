@@ -5,11 +5,11 @@
     gap: 10px;
   }
   
-  .direction-group {
+  /* .direction-group {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-  }
+  } */
   
   .direction-option {
     padding: 5px 10px;
@@ -23,3 +23,15 @@
     color: white;
     border-color: #007bff;
   } 
+
+  /* .direction-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+  } */
+
+  .direction-img svg {
+    height: 4rem;
+    width: 9rem;
+  }

@@ -2,12 +2,11 @@
 
 .color-selector {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
 
 .color-option {
-    padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;

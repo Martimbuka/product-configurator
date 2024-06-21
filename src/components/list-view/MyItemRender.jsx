@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LockImg from './LockImg';
+import DirectionImg from './fields/DirectionImg';
 import { confirmAlert } from 'react-confirm-alert';
 import Field from './fields/Field';
 import EditMode from './EditMode';
@@ -14,8 +15,7 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
     ...dataItem,
     width: dataItem.frameSize.width,
     height: dataItem.frameSize.height,
-    inOut: dataItem.direction.inOut,
-    leftRight: dataItem.direction.leftRight,
+    direction: dataItem.direction,
     hinges: dataItem.hinges,
     wing: dataItem.wing,
     lock: dataItem.lock,
@@ -65,8 +65,7 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
               <span>Височина {itemData.frameSize.height}<span className='unit'>mm</span></span>
             </Field>
             <Field>
-              <span>{itemData.direction.inOut}</span>
-              <span>{itemData.direction.leftRight}</span>
+              <DirectionImg direction={itemData.direction} />
             </Field>
             <Field >{itemData.hinges}</Field>
             <Field>{itemData.wing}</Field>
