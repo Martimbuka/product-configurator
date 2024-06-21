@@ -8,6 +8,13 @@
     letter-spacing: 0.25px;
     border-radius: 6px;
     cursor: pointer;
+    width: 35px;
+    height: 35px;
+}
+
+.btn .mdi-delete {
+    height: 45px;
+    width: 45px;
 }
 
 .btn:focus {

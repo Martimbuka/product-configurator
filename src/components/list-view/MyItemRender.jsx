@@ -79,14 +79,14 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength, editItem }) 
             <button type='button' className='btn btn-edit' onClick={() => setEditMode(true)}>
               <Icon
                 path={mdiFileEdit}
-                size={1}
+                size={'24px'}
                 color="blue"
                 className='mdi-edit'
                 title={'Редактиране'}
               />
               <Icon
                 path={mdiPencil}
-                size={1}
+                size={'24px'}
                 color="blue"
                 className='mdi-pencil'
                 title={'Редактиране'}
@@ -95,14 +95,14 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength, editItem }) 
             {dataLength > 1 && <button type='button' className='btn btn-delete' onClick={handleDelete}>
               <Icon
                 path={mdiDelete}
-                size={1}
+                size={'24px'}
                 color="red"
                 className='mdi-delete'
                 title={'Изтриване'}
               />
               <Icon
                 path={mdiDeleteEmpty}
-                size={1}
+                size={'24px'}
                 color="red"
                 className='mdi-delete-empty'
                 title={'Изтриване'}

@@ -85,7 +85,7 @@ body {
 
 textarea.form-control {
   resize: vertical;
-  min-height: calc(1.5em + .75rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1.5em + 12px + calc(var(--bs-border-width) * 2));
   max-width: calc(100% - 20px);
 }
 
