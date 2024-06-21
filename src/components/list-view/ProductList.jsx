@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import ListView from './ListView';
 import ListViewHeader from './ListViewHeader';
 import MyItemRender from './MyItemRender';
+import EditMode from './EditMode';
 import '../../style/list-view.css';
 import '../../style/view-item.css';
+import Overlay from './Overlay';
 
 const templateData = [
   {
@@ -29,20 +31,22 @@ const MyHeader = () => {
       style={{}}
       className=""
     >
-          <div className="header-item">№</div>
-          <div className="header-item">Размер на рамката</div>
-          <div className="header-item">Посока на отваряне</div>
-          <div className="header-item">Брой панти</div>
-          <div className="header-item">Крило<div className='subtitle'>MDF, грундиран</div></div>
-          <div className="header-item">Брава с магнитен насрещник</div>
-          <div className="header-item">Уплътнение</div>
-          <div className="header-item">Брой</div>
+      <div className="header-item">№</div>
+      <div className="header-item">Размер на рамката</div>
+      <div className="header-item">Посока на отваряне</div>
+      <div className="header-item">Брой панти</div>
+      <div className="header-item">Крило<div className='subtitle'>MDF, грундиран</div></div>
+      <div className="header-item">Брава с магнитен насрещник</div>
+      <div className="header-item">Уплътнение</div>
+      <div className="header-item">Брой</div>
     </ListViewHeader>
   );
 };
 
 const ProductList = () => {
   const [rows, setRows] = useState(templateData);
+  const [currentItem, setCurrentItem] = useState(null);
+  const [isEditModeOpen, setIsEditModeOpen] = useState(false);
 
   const saveData = (editItem) => {
     setRows(rows.map(e => (e.ProductID === editItem.ProductID ? { ...editItem, edit: false } : e)));
@@ -76,10 +80,21 @@ const ProductList = () => {
       quantity: 1,
       edit: false
     };
-    setRows([...rows, newProduct]);
+
+    setCurrentItem(newProduct);
+    setIsEditModeOpen(true);
+    // setRows([...rows, newProduct]);
   };
 
- 
+  const handleSave = (item) => {
+    setRows([...rows, item]);
+    setIsEditModeOpen(false);
+  }
+
+  const handleCancel = () => {
+    setIsEditModeOpen(false);
+  }
+
 
   /* The purpose of MyCustomItem is to serve as a wrapper or intermediary
    that enhances or modifies the props for MyItemRender. It allows
@@ -100,6 +115,16 @@ const ProductList = () => {
       >
 
       </ListView>
+      {isEditModeOpen &&
+        <>
+          <Overlay closePopup={handleCancel} />
+          <EditMode
+            itemData={currentItem}
+            setItemData={setCurrentItem}
+            closePopup={handleCancel}
+            saveItem={handleSave}
+          />
+        </>}
     </div>
   );
 };

@@ -105,7 +105,7 @@
 
 
 /*Edit mode*/
-.list-view-item .editing .edit-popup {
+.edit-popup {
   position: fixed;
   overflow-y: auto;
   max-height: 100%;
