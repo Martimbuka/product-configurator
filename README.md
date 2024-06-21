@@ -20,6 +20,7 @@
 -->
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
 
 
@@ -80,7 +81,10 @@
 ## About The Project
 
 <div align="center">
-    <img src="https://cdncloudcart.com/30283/files/image/product-configurator-example.png?1717747902" alt="Example" width="500px" height="400px">
+    <!--the image is inside folder images/screenshot.png  -->
+    <img 
+     src="images/screenshot.png"
+     alt="Example" width="500px" height="400px">
 </div>
 
 The configurator is designed to be used in the firm Prodes for doors specifications and orders. The configurator provides an interface in Bulgarian only. Easy and intuitive selection of specifications for furniture doors, with no competitor in the field.
@@ -225,3 +229,5 @@ Project Link: [https://github.com/Martimbuka/product-configurator](https://githu
 [Node-url]: https://nodejs.org/en/
 [EmailJS]: https://img.shields.io/badge/EmailJS-43853D?style=for-the-badge&logo=nodedotjs&logoColor=white
 [EmailJS-url]: https://www.emailjs.com/
+[status-url]: https://img.shields.io/badge/status-in%20progress-yellow
+```
