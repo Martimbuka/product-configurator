@@ -9,7 +9,7 @@ import '../../style/buttons.css';
 import Icon from '@mdi/react';
 import { mdiDelete, mdiDeleteEmpty, mdiFileEdit, mdiPencil } from '@mdi/js';
 
-const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
+const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength, editItem }) => {
   const [editMode, setEditMode] = useState(dataItem.edit || false);
   const [itemData, setItemData] = useState({
     ...dataItem,
@@ -58,7 +58,7 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
         </>
       ) : (
         <div style={{ width: '100%' }}>
-          <div className='view-item'>
+          <button type="button" className='view-item btn-view-item' onClick={() => setEditMode(true)}>
             <Field>{itemData.ProductID}</Field>
             <Field className='item frameSize'>
               <span>Широчина {itemData.frameSize.width}<span className='unit'>mm</span></span>
@@ -74,9 +74,8 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength }) => {
             </Field>
             <Field>{itemData.sealColor}</Field>
             <Field>{itemData.quantity}</Field>
-          </div>
+          </button>
           <div className='button-container'>
-            {/* <button type='button' className='view-button' onClick={() => setEditMode(true)}><ButtonImg type='view' /></button> */}
             <button type='button' className='btn btn-edit' onClick={() => setEditMode(true)}>
               <Icon
                 path={mdiFileEdit}

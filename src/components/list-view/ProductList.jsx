@@ -35,7 +35,7 @@ const MyHeader = () => {
       <div className="header-item">Размер на рамката</div>
       <div className="header-item">Посока на отваряне</div>
       <div className="header-item">Брой панти</div>
-      <div className="header-item">Крило<div className='subtitle'>MDF, грундиран</div></div>
+      <div className="header-item">Крило<br/><span className='subtitle'>MDF, грундиран</span></div>
       <div className="header-item">Брава с магнитен насрещник</div>
       <div className="header-item">Уплътнение</div>
       <div className="header-item">Брой</div>
@@ -95,12 +95,17 @@ const ProductList = () => {
     setIsEditModeOpen(false);
   }
 
+  const handleEdit = (item) => {
+    setCurrentItem(item);
+    setIsEditModeOpen(true);
+  }
+
 
   /* The purpose of MyCustomItem is to serve as a wrapper or intermediary
    that enhances or modifies the props for MyItemRender. It allows
     for additional logic or data manipulation before rendering MyItemRender */
   const MyCustomItem = (props) => (
-    <MyItemRender {...props} saveItem={saveData} deleteItem={deleteItem} dataLength={rows.length} />
+    <MyItemRender {...props} saveItem={saveData} deleteItem={deleteItem} dataLength={rows.length} editItem={handleEdit} />
   );
 
   return (
