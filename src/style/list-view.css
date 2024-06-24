@@ -116,10 +116,10 @@
 
 .edit-popup,
 .editing .edit-popup {
-  position: fixed;
+  position: absolute;
   overflow-y: auto;
   max-height: 100%;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;

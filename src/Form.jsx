@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 // import emailjs from '@emailjs/browser'; // to be used
-import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import ImageZoom from './components/Image';
 import ProductList from './components/list-view/ProductList';
 import './form.css';
+import Swal from 'sweetalert2';
 
 const Form = () => {
     const {
@@ -15,41 +15,9 @@ const Form = () => {
         formState: { errors },
     } = useForm();
     const [disabled, setDisabled] = useState(false);
-    // const [alertInfo, setAlertInfo] = useState({
-    //     display: false,
-    //     message: '',
-    //     type: '',
-    // });
-
-    // // Shows alert message for form submission feedback
-    // const toggleAlert = (message, type) => {
-    //     setAlertInfo({ display: true, message, type });
-
-    //     // Hide alert after 5 seconds
-    //     setTimeout(() => {
-    //         setAlertInfo({ display: false, message: '', type: '' });
-    //     }, 5000);
-    // };
-
-    const confirmation = (data) => {
-        confirmAlert({
-            title: 'Потвърждение',
-            message: 'Сигурни ли сте, че искате да изпратите този формуляр?',
-            buttons: [
-                {
-                    label: 'Да',
-                    onClick: () => onSubmit(data),
-                },
-                {
-                    label: 'Не',
-                    onClick: () => { },
-                },
-            ],
-        });
-    };
 
     // Function called on submit that uses emailjs to send email of valid contact form
-    const onSubmit = async (data) => {
+    const onSubmit = (data) => {
         // currently not using emailjs, so commenting out the code
         // need to add emailjs to the project and configure it
         // missing the firm SMPT server details
@@ -58,6 +26,7 @@ const Form = () => {
 
         // Destrcture data object
         // const { name, email, phone, message } = data;
+        console.log(data);
         try {
 
             // Disable form while processing submission
@@ -81,7 +50,15 @@ const Form = () => {
             // );
 
             // Display success alert
-            //toggleAlert('Form submission was successful!', 'success');
+            // when the button is clicked, it will redirect to a specific page
+            Swal.fire({
+                title: "Успешно изпратена бланка!",
+                text: "Ще се свържем с вас възможно най-скоро!",
+                icon: "success",
+                confirmButtonText: "Добре",
+            }).then(() => {
+                window.location.href = "/";
+              });
         } catch (e) {
             console.error(e);
             // Display error alert
@@ -102,7 +79,7 @@ const Form = () => {
                 <div className='contactForm'>
                     <form
                         id='contact-form'
-                        onSubmit={handleSubmit(confirmation)}
+                        onSubmit={handleSubmit(onSubmit)}
                         noValidate
                     >
                         {/* Row 1 of form */}
