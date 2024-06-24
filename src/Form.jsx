@@ -15,14 +15,56 @@ const Form = () => {
         formState: { errors },
     } = useForm();
     const [disabled, setDisabled] = useState(false);
+    const [rows, setRows] = useState([]);
 
     // Function called on submit that uses emailjs to send email of valid contact form
     const onSubmit = (data) => {
-        // currently not using emailjs, so commenting out the code
-        // need to add emailjs to the project and configure it
-        // missing the firm SMPT server details
 
-        // only reset the form for now
+        const table = `
+        <table style="border-collapse: collapse; width: 100%;">
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">№</th>
+                <th style="border: 1px solid black; padding: 8px;">Размер на рамката</th>
+                <th style="border: 1px solid black; padding: 8px;">Посока на отваряне</th>
+                <th style="border: 1px solid black; padding: 8px;">Брой панти</th>
+                <th style="border: 1px solid black; padding: 8px;">Крило</th>
+                <th style="border: 1px solid black; padding: 8px;">Брава с магнитен насрещник</th>
+                <th style="border: 1px solid black; padding: 8px;">Уплътнение</th>
+                <th style="border: 1px solid black; padding: 8px;">Брой</th>
+            </tr>
+            ${rows.map((row, index) => {
+            return `
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">${index + 1}</td>
+                    <td style="border: 1px solid black; padding: 8px;">${row.frameSize.width}mm x ${row.frameSize.height}mm</td>
+                    <td style="border: 1px solid black; padding: 8px;">${row.direction}</td>
+                    <td style="border: 1px solid black; padding: 8px;">${row.hinges}</td>
+                    <td style="border: 1px solid black; padding: 8px;">${row.wing}</td>
+                    <td style="border: 1px solid black; padding: 8px;">${row.lock}</td>
+                    <td style="border: 1px solid black; padding: 8px;">${row.sealColor}</td>
+                    <td style="border: 1px solid black; padding: 8px;">${row.quantity}</td>
+                </tr>
+            `;
+        })}
+        </table>
+        `;
+
+        const emailBody = `
+        <h2>Нова поръчка от ProDes.bg</h2>
+        <h3>Контактна информация</h3>
+        <ul>
+            <li><strong>Име:</strong> ${data.name}</li>
+            <li><strong>Имейл:</strong> ${data.email}</li>
+            <li><strong>Телефон:</strong> ${data.phone}</li>
+            <li><strong>Съобщение:</strong> ${data.message}</li>
+        </ul>
+        <h3>Поръчка</h3>
+        ${table}
+        `;
+
+        
+
+
 
         // Destrcture data object
         // const { name, email, phone, message } = data;
@@ -198,7 +240,7 @@ const Form = () => {
                         <div className='formRow'>
                             <div className='col'>
                                 <p className='font-size-16'>
-                                    <ProductList />
+                                    <ProductList rows={rows} setRows={setRows} />
                                 </p>
                             </div>
                         </div>

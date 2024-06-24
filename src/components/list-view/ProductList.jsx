@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ListView from './ListView';
 import ListViewHeader from './ListViewHeader';
 import MyItemRender from './MyItemRender';
@@ -43,8 +43,7 @@ const MyHeader = () => {
   );
 };
 
-const ProductList = () => {
-  const [rows, setRows] = useState([]);
+const ProductList = ({rows, setRows}) => {
   const [currentItem, setCurrentItem] = useState(null);
   const [isEditModeOpen, setIsEditModeOpen] = useState(false);
 
@@ -99,6 +98,20 @@ const ProductList = () => {
     setCurrentItem(item);
     setIsEditModeOpen(true);
   }
+
+  useEffect(() => {
+    if (isEditModeOpen) {
+      // Prevent scrolling of the background page when the edit mode is open
+      document.body.style.overflow = 'hidden';
+    } 
+    else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isEditModeOpen]);
 
 
   /* The purpose of MyCustomItem is to serve as a wrapper or intermediary
