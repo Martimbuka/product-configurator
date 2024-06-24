@@ -174,3 +174,11 @@ textarea.form-control {
 .iaMfJy {
   z-index: 0;
 }
+
+@media (max-width: 768px) {
+  .grid-3-1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 0px;
+  }
+}

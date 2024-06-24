@@ -7,22 +7,22 @@ import '../../style/list-view.css';
 import '../../style/view-item.css';
 import Overlay from './Overlay';
 
-const templateData = [
-  {
-    ProductID: '1',
-    frameSize: {
-      width: 0,
-      height: 0
-    },
-    direction: '',
-    hinges: '',
-    wing: '',
-    lock: '',
-    sealColor: '',
-    quantity: 1,
-    edit: false
-  }
-];
+// const templateData = [
+//   {
+//     ProductID: '1',
+//     frameSize: {
+//       width: 0,
+//       height: 0
+//     },
+//     direction: '',
+//     hinges: '',
+//     wing: '',
+//     lock: '',
+//     sealColor: '',
+//     quantity: 1,
+//     edit: false
+//   }
+// ];
 
 const MyHeader = () => {
 
@@ -44,7 +44,7 @@ const MyHeader = () => {
 };
 
 const ProductList = () => {
-  const [rows, setRows] = useState(templateData);
+  const [rows, setRows] = useState([]);
   const [currentItem, setCurrentItem] = useState(null);
   const [isEditModeOpen, setIsEditModeOpen] = useState(false);
 

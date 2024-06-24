@@ -9,7 +9,7 @@ const ListView = ({ rows, item: ItemComponent, style, header: HeaderComponent, a
       {HeaderComponent && <HeaderComponent />}
       <ul>
         <Icon path={mdiArrowLeftRight} size={20} className='sidebar-arrow'/>
-        {rows.map(item => (
+        {rows.length > 0 && rows.map(item => (
           <li key={item.ProductID} className="list-view-item">
             <ItemComponent dataItem={item} />
           </li>
