@@ -15,7 +15,7 @@ const templateData = [
       height: 0
     },
     direction: '',
-    hinges: 2,
+    hinges: '',
     wing: '',
     lock: '',
     sealColor: '',
@@ -73,7 +73,7 @@ const ProductList = () => {
         height: 0
       },
       direction: '',
-      hinges: 2,
+      hinges: '',
       wing: '',
       lock: '',
       sealColor: '',

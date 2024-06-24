@@ -46,6 +46,20 @@
     width: 80px;
 }
 
+.error {
+    color: red;
+    font-size: 16px;
+    margin-left: 4px;
+    font-style: italic;
+}
+
+.required-text {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 11px;
+    margin-left: 2px;
+}
+
 @media (max-width: 1200px) {
     .lock-img svg {
         height: 30px;
