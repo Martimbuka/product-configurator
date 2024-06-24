@@ -17,32 +17,43 @@ const Form = () => {
     const [disabled, setDisabled] = useState(false);
     const [rows, setRows] = useState([]);
 
+    const style = {
+        border: '1px solid black',
+        padding: '8px',
+        textAlign: 'center',
+    };
+
+    
+
+
+
     // Function called on submit that uses emailjs to send email of valid contact form
     const onSubmit = (data) => {
 
+        // Setup HTML table for email
         const table = `
         <table style="border-collapse: collapse; width: 100%;">
             <tr>
-                <th style="border: 1px solid black; padding: 8px;">№</th>
-                <th style="border: 1px solid black; padding: 8px;">Размер на рамката</th>
-                <th style="border: 1px solid black; padding: 8px;">Посока на отваряне</th>
-                <th style="border: 1px solid black; padding: 8px;">Брой панти</th>
-                <th style="border: 1px solid black; padding: 8px;">Крило</th>
-                <th style="border: 1px solid black; padding: 8px;">Брава с магнитен насрещник</th>
-                <th style="border: 1px solid black; padding: 8px;">Уплътнение</th>
-                <th style="border: 1px solid black; padding: 8px;">Брой</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">№</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">Размер на рамката</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">Посока на отваряне</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">Брой панти</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">Крило</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">Брава с магнитен насрещник</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">Уплътнение</th>
+                <th style="border: 1px solid black; padding: 8px; text-align: center">Брой</th>
             </tr>
             ${rows.map((row, index) => {
             return `
                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">${index + 1}</td>
-                    <td style="border: 1px solid black; padding: 8px;">${row.frameSize.width}mm x ${row.frameSize.height}mm</td>
-                    <td style="border: 1px solid black; padding: 8px;">${row.direction}</td>
-                    <td style="border: 1px solid black; padding: 8px;">${row.hinges}</td>
-                    <td style="border: 1px solid black; padding: 8px;">${row.wing}</td>
-                    <td style="border: 1px solid black; padding: 8px;">${row.lock}</td>
-                    <td style="border: 1px solid black; padding: 8px;">${row.sealColor}</td>
-                    <td style="border: 1px solid black; padding: 8px;">${row.quantity}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${index + 1}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.frameSize.width}mm x ${row.frameSize.height}mm</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.direction}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.hinges}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.wing}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.lock}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.sealColor}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.quantity}</td>
                 </tr>
             `;
         })}
@@ -50,7 +61,7 @@ const Form = () => {
         `;
 
         const emailBody = `
-        <h2>Нова поръчка от ProDes.bg</h2>
+        <h2>Нова поръчка от Prodes.bg за тапетни врати</h2>
         <h3>Контактна информация</h3>
         <ul>
             <li><strong>Име:</strong> ${data.name}</li>
@@ -61,14 +72,7 @@ const Form = () => {
         <h3>Поръчка</h3>
         ${table}
         `;
-
         
-
-
-
-        // Destrcture data object
-        // const { name, email, phone, message } = data;
-        console.log(data);
         try {
 
             // Disable form while processing submission
