@@ -200,10 +200,11 @@ const Form = () => {
                         {/* Row 3 of form  - Image information*/}
                         <div className='formRow'>
                             <div className='col'>
-                                <p className='font-size-16'>
+                                <p>
                                     <ImageZoom
                                         src='https://cdncloudcart.com/30283/files/image/full-size-description-taped-doors.jpg?1715675674'
                                         alt='Taped doors'
+                                        className='img-taped-doors'
                                     />
                                 </p>
                             </div>

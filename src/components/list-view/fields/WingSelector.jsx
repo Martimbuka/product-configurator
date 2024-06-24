@@ -15,14 +15,14 @@ const WingSelector = ({ itemData, setItemData }) => {
     return (
         <div className="wing-selector">
             <div
-                className={`wing-option ${selectedWing === "yes" ? "selected" : ""}`}
-                onClick={() => handleWingChange("yes")}
+                className={`wing-option ${selectedWing === "Да" ? "selected" : ""}`}
+                onClick={() => handleWingChange("Да")}
             >
                 Да
             </div>
             <div
-                className={`wing-option ${selectedWing === "no" ? "selected" : ""}`}
-                onClick={() => handleWingChange("no")}
+                className={`wing-option ${selectedWing === "Не" ? "selected" : ""}`}
+                onClick={() => handleWingChange("Не")}
             >
                 Не
             </div>

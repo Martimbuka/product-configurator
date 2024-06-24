@@ -10,10 +10,6 @@ body {
   padding: 20px;
 }
 
-.ContactForm {
-  background-color: #f9f9f9;
-}
-
 /* .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -125,6 +121,7 @@ textarea.form-control {
 .form-check {
   display: grid;
   align-items: center;
+  margin-top: 20px;
 }
 
 .form-check-input {
@@ -141,6 +138,7 @@ textarea.form-control {
 
 .form-check label a {
   color: blue;
+  text-decoration: underline;
 }
 
 .submit-btn {
@@ -166,4 +164,9 @@ textarea.form-control {
 
 .submit-btn:active {
   transform: scale(0.95);
+  background-color: #f11616;
+}
+
+.img-taped-doors {
+  z-index: 0;
 }

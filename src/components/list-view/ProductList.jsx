@@ -15,11 +15,11 @@ const templateData = [
       height: 0
     },
     direction: '',
-    hinges: 0,
+    hinges: 2,
     wing: '',
     lock: '',
     sealColor: '',
-    quantity: 0,
+    quantity: 1,
     edit: false
   }
 ];
