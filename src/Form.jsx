@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-// import emailjs from '@emailjs/browser'; // to be used
-import 'react-confirm-alert/src/react-confirm-alert.css';
+import emailjs from '@emailjs/browser';
 import ImageZoom from './components/Image';
 import ProductList from './components/list-view/ProductList';
-import './form.css';
 import Swal from 'sweetalert2';
+import LockImg from './components/list-view/LockImg';
+import ConvertImageToBase64URL from './lib/ImgToBase64';
+
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import './form.css';
 
 const Form = () => {
     const {
@@ -16,15 +19,7 @@ const Form = () => {
     } = useForm();
     const [disabled, setDisabled] = useState(false);
     const [rows, setRows] = useState([]);
-
-    const style = {
-        border: '1px solid black',
-        padding: '8px',
-        textAlign: 'center',
-    };
-
     
-
 
 
     // Function called on submit that uses emailjs to send email of valid contact form
@@ -47,18 +42,25 @@ const Form = () => {
             return `
                 <tr>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${index + 1}</td>
-                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.frameSize.width}mm x ${row.frameSize.height}mm</td>
-                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.direction}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">
+                    Широчина - ${row.frameSize.width}mm<br/>
+                    Височина - ${row.frameSize.height}mm</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">
+                        ${<ConvertImageToBase64URL imageName={row.direction}/>}
+                    </td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${row.hinges}</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${row.wing}</td>
-                    <td style="border: 1px solid black; padding: 8px; text-align:center">${row.lock}</td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">${<LockImg lock={row.lock}/>}</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${row.sealColor}</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${row.quantity}</td>
                 </tr>
             `;
-        })}
+        }).join('')}
         </table>
         `;
+
+        const dateTime = new Date();
+        const date = dateTime.toLocaleDateString('bg-BG').slice(0, 10);
 
         const emailBody = `
         <h2>Нова поръчка от Prodes.bg за тапетни врати</h2>
@@ -67,33 +69,30 @@ const Form = () => {
             <li><strong>Име:</strong> ${data.name}</li>
             <li><strong>Имейл:</strong> ${data.email}</li>
             <li><strong>Телефон:</strong> ${data.phone}</li>
-            <li><strong>Съобщение:</strong> ${data.message}</li>
+            <li><strong>Бележки:</strong> ${data.message}</li>
+            <li><strong>Дата:</strong> ${date}</li>
         </ul>
         <h3>Поръчка</h3>
         ${table}
         `;
-        
-        try {
 
+        const templateParams = {
+                emailBody
+            }
+
+        const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+        const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+        const USER_ID = process.env.REACT_APP_USER_ID;
+        try {
             // Disable form while processing submission
             setDisabled(true);
 
-
-            // // Define template params
-            // const templateParams = {
-            //     name,
-            //     email,
-            //     phone,
-            //     message,
-            // };
-
-            // // Use emailjs to email contact form data
-            // await emailjs.send(
-            //     import.meta.env.VITE_SERVICE_ID,
-            //     import.meta.env.VITE_TEMPLATE_ID,
-            //     templateParams,
-            //     import.meta.env.VITE_PUBLIC_KEY,
-            // );
+            emailjs.send(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                templateParams,
+                USER_ID
+            );
 
             // Display success alert
             // when the button is clicked, it will redirect to a specific page

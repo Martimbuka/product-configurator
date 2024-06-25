@@ -17,24 +17,24 @@ const DirectionSelector = ({ itemData, setItemData }) => {
   return (
     <div className="direction-selector">
       <div
-        className={`direction-option ${direction === 'inside-left' ? 'selected' : ''}`}
-        onClick={() => handleDirectionChange({target: {value: "inside-left"}})}>
-        <DirectionImg direction="inside-left" />
+        className={`direction-option ${direction === 'Навътре, ляво' ? 'selected' : ''}`}
+        onClick={() => handleDirectionChange({target: {value: "Навътре, ляво"}})}>
+        <DirectionImg direction="Навътре, ляво" />
       </div>
       <div
-        className={`direction-option ${itemData.direction === 'inside-right' ? 'selected' : ''}`}
-        onClick={() => handleDirectionChange({target: {value: "inside-right"}})}>
-        <DirectionImg direction="inside-right" />
+        className={`direction-option ${itemData.direction === 'Навътре, дясно' ? 'selected' : ''}`}
+        onClick={() => handleDirectionChange({target: {value: "Навътре, дясно"}})}>
+        <DirectionImg direction="Навътре, дясно" />
       </div>
       <div
-        className={`direction-option ${itemData.direction === 'outside-left' ? 'selected' : ''}`}
-        onClick={() => handleDirectionChange({target: {value: "outside-left"}})}>
-        <DirectionImg direction="outside-left" />
+        className={`direction-option ${itemData.direction === 'Навън, ляво' ? 'selected' : ''}`}
+        onClick={() => handleDirectionChange({target: {value: "Навън, ляво"}})}>
+        <DirectionImg direction="Навън, ляво" />
       </div>
       <div
-        className={`direction-option ${itemData.direction === 'outside-right' ? 'selected' : ''}`}
-        onClick={() => handleDirectionChange({target: {value: "outside-right"}})}>
-        <DirectionImg direction="outside-right" />
+        className={`direction-option ${itemData.direction === 'Навън, дясно' ? 'selected' : ''}`}
+        onClick={() => handleDirectionChange({target: {value: "Навън, дясно"}})}>
+        <DirectionImg direction="Навън, дясно" />
       </div>
 
 
