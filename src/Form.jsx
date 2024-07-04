@@ -23,11 +23,32 @@ const Form = () => {
     const { toPDF, targetRef } = usePDF({ filename: 'taped-doors.pdf' });
 
     const handlePDF = () => {
+        if (rows.length === 0) {
+            Swal.fire({
+                title: 'Таблицата е празна.',
+                text: 'Моля, добавете елементи!',
+                icon: 'warning',
+                confirmButtonText: 'Добре'
+            });
+            return;
+        }
+
+        // Save PDF
         handleSavePDF(toPDF);
     }
 
     // Function called on submit that uses emailjs to send email of valid contact form
     const onSubmit = async (data) => {
+
+        if (rows.length === 0) {
+            Swal.fire({
+                title: 'Таблицата е празна.',
+                text: 'Моля, добавете елементи!',
+                icon: 'warning',
+                confirmButtonText: 'Добре'
+            });
+            return;
+        }
 
         let sending = false;
 
@@ -38,7 +59,8 @@ const Form = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Да"
+            confirmButtonText: "Да",
+            cancelButtonText: "Отказ",
         }).then((result) => {
             if (result.isConfirmed) {
                 sending = true;
@@ -322,7 +344,7 @@ const Form = () => {
                         </div>
 
 
-                        
+
                         <button type='button' className='btn-toPDF' onClick={handlePDF}>
                             Запази в PDF
                         </button>
