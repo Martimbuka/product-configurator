@@ -127,7 +127,8 @@ const Form = () => {
         `;
 
         const templateParams = {
-            emailBody
+            emailBody,
+            from_mail: data.email
         }
 
 
