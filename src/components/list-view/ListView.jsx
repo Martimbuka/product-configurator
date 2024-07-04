@@ -5,7 +5,7 @@ import { mdiArrowLeftRight } from '@mdi/js';
 const ListView = ({ rows, item: ItemComponent, style, header: HeaderComponent, addProduct }) => { 
 
   return (
-    <div style={style} className="list-view-container">
+    <div style={style} className="list-view-container" id='list-view-container'>
       {HeaderComponent && <HeaderComponent />}
       <ul>
         <Icon path={mdiArrowLeftRight} size={20} className='sidebar-arrow'/>
@@ -16,7 +16,7 @@ const ListView = ({ rows, item: ItemComponent, style, header: HeaderComponent, a
         ))}
       </ul>
       {rows.length < 7 && <div className="add-product-form">
-        <button type='button' className='add-button' onClick={addProduct}>Добави</button>
+        <button type='button' className='add-button' id='add-button' onClick={addProduct}>Добави</button>
       </div>}
     </div>
   );

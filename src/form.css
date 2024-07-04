@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background: #ffffff;
+  /* background-image: url('./assets/img/inside-left.png'); */
+  background: #ccc;
   line-height: 26px;
   margin: 0;
 }
@@ -8,6 +9,7 @@ body {
 .App {
   text-align: center;
   padding: 20px;
+  opacity: 1;
 }
 
 /* .container {
@@ -148,13 +150,13 @@ textarea.form-control {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #f11616ca;
+  background-color: #1699f1ca;
   display: inline-block;
   color: white;
 }
 
 .submit-btn:hover {
-  background-color: #f11616;
+  filter:brightness(1.1);
 }
 
 .submit-btn:disabled {
@@ -164,7 +166,7 @@ textarea.form-control {
 
 .submit-btn:active {
   transform: scale(0.95);
-  background-color: #f11616;
+  background-color: #1699f1ca;
 }
 
 .img-taped-doors {
@@ -175,10 +177,46 @@ textarea.form-control {
   z-index: 0;
 }
 
+.btn-toPDF {
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #f11616ca;
+}
+
+.btn-toPDF:hover {
+  filter: brightness(1.1);
+}
+
+.btn-toPDF:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-toPDF:active {
+  transform: scale(0.95);
+  background-color: #f11616;
+}
+
+.final-buttons {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 1;
+}
+
+
 @media (max-width: 768px) {
   .grid-3-1 {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 0px;
   }
+}
+
+@media print {
+  
 }

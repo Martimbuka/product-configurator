@@ -122,7 +122,7 @@ const ProductList = ({rows, setRows}) => {
   );
 
   return (
-    <div>
+    <div className='ProductList'>
 
       <ListView
         rows={rows}

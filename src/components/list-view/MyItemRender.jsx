@@ -75,8 +75,8 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength, editItem }) 
             <Field>{itemData.sealColor}</Field>
             <Field>{itemData.quantity}</Field>
           </button>
-          <div className='button-container'>
-            <button type='button' className='btn btn-edit' onClick={() => setEditMode(true)}>
+          <div className='button-container' id='button-container'>
+            <button type='button' className='btn btn-edit' id='btn1' onClick={() => setEditMode(true)}>
               <Icon
                 path={mdiFileEdit}
                 size={'24px'}
@@ -92,7 +92,7 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength, editItem }) 
                 title={'Редактиране'}
               />
             </button>
-            {dataLength > 1 && <button type='button' className='btn btn-delete' onClick={handleDelete}>
+            {dataLength > 1 && <button type='button' className='btn btn-delete' id='btn2' onClick={handleDelete}>
               <Icon
                 path={mdiDelete}
                 size={'24px'}
