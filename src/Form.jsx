@@ -180,9 +180,10 @@ const Form = () => {
     return (
         <div className='ContactForm'>
             <div className='container' id='container'>
-
+            
 
                 <div className='contactForm'>
+                <h1 className='text-center title'>Бланка за тапетни врати</h1>
                     <form
                         id='contact-form'
                         onSubmit={handleSubmit(onSubmit)}
