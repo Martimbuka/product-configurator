@@ -23,7 +23,11 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength, editItem }) 
     quantity: dataItem.quantity
   });
 
-  const handleClose = () => setEditMode(false);
+  const handleClose = () => {
+    setEditMode(false);
+    document.getElementById('container').style.opacity = null;
+  } 
+    
 
   const handleDelete = () => {
     confirmAlert({
@@ -48,6 +52,7 @@ const MyItemRender = ({ dataItem, saveItem, deleteItem, dataLength, editItem }) 
     <div className={`list-view-item ${editMode ? 'editing' : ''}`} style={{ width: '100%' }}>
       {editMode ? (
         <>
+
           <Overlay closePopup={handleClose} />
           <EditMode
             itemData={itemData}

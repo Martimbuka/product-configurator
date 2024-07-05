@@ -168,11 +168,11 @@
 }
 
 .save-button {
-    background-color: #81ea4c;
+    background-color: #007bff;
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
-    color: #000000;
+    color: #ffffff;
     cursor: pointer;
     display: inline-block;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -196,7 +196,7 @@
 }
 
 .save-button:hover {
-    background-color: #c5faa9;
+    filter:brightness(1.6);
 }
 
 .save-button:active {

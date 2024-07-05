@@ -16,6 +16,15 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.3 ease;
+  }
+
+  .direction-option:hover {
+    transform: scale(1.05);
+  }
+
+  .direction-option:active {
+    transform: scale(0.98);
   }
   
   .direction-option.selected {

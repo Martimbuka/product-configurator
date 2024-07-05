@@ -9,6 +9,14 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .wing-option:hover {
+    transform: scale(1.1);
+  }
+
+  .wing-option:active {
+    transform: scale(0.95);
+  }
   
   .wing-option.selected {
     background-color: #007bff;

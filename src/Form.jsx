@@ -139,12 +139,12 @@ const Form = () => {
             // Disable form while processing submission
             setDisabled(true);
 
-            // emailjs.send(
-            //     SERVICE_ID,
-            //     TEMPLATE_ID,
-            //     templateParams,
-            //     USER_ID
-            // );
+            emailjs.send(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                templateParams,
+                USER_ID
+            );
 
             // Display success alert
             // when the button is clicked, it will redirect to a specific page

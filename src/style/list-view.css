@@ -123,13 +123,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position-x: 10px;
+  background-position-y: 8px;
+  background-image: url('https://cdncloudcart.com/30283/logo/2_1920x1920.png?1666179107');
   padding: 0 20px;
   z-index: 1000;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 4px 6px rgba(0, 0, 0, 0.15);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: .1fr .2fr .2fr .2fr .2fr .2fr .2fr .2fr;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

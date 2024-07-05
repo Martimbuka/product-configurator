@@ -8,6 +8,15 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.3 ease;
+}
+
+.hinges-option:hover {
+    transform: scale(1.1);
+}
+
+.hinges-option:active {
+    transform: scale(0.95);
 }
 
 .hinges-option.selected {

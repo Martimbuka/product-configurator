@@ -87,11 +87,12 @@ const ProductList = ({rows, setRows}) => {
 
   const handleSave = (item) => {
     setRows([...rows, item]);
-    setIsEditModeOpen(false);
+    handleCancel();
   }
 
   const handleCancel = () => {
     setIsEditModeOpen(false);
+    document.getElementById('container').style.opacity = null;
   }
 
   const handleEdit = (item) => {

@@ -90,8 +90,13 @@ const EditMode = ({ itemData, setItemData, closePopup, saveItem }) => {
     }
   };
 
+  const handleOpacity = () => {
+    document.getElementById('container').style.opacity = 1;
+  }
+
   return (
     <div className="edit-popup">
+      {handleOpacity()}
       {/* Implement your form and inputs here using itemData and setItemData */}
       <div className='frameSize-edit'>
         <div className='title'>Размер на рамката</div>
