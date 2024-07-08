@@ -16,7 +16,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.9;
 }
 
 /* .container {
@@ -186,31 +185,6 @@ textarea.form-control {
 
 .iaMfJy {
   z-index: 0;
-}
-
-.btn-toPDF {
-  margin: 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 16px;
-  color: white;
-  background-color: #f11616ca;
-}
-
-.btn-toPDF:hover {
-  filter: brightness(1.1);
-}
-
-.btn-toPDF:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.btn-toPDF:active {
-  transform: scale(0.95);
-  background-color: #f11616;
 }
 
 .final-buttons {

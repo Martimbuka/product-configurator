@@ -6,9 +6,6 @@ import ProductList from './components/list-view/ProductList';
 import Swal from 'sweetalert2';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import './form.css';
-import { usePDF } from 'react-to-pdf';
-
-import { handleSavePDF } from './lib/savePDF';
 
 const Form = () => {
     const {
@@ -19,23 +16,6 @@ const Form = () => {
     } = useForm();
     const [disabled, setDisabled] = useState(false);
     const [rows, setRows] = useState([]);
-
-    const { toPDF, targetRef } = usePDF({ filename: 'taped-doors.pdf' });
-
-    const handlePDF = () => {
-        if (rows.length === 0) {
-            Swal.fire({
-                title: 'Таблицата е празна.',
-                text: 'Моля, добавете елементи!',
-                icon: 'warning',
-                confirmButtonText: 'Добре'
-            });
-            return;
-        }
-
-        // Save PDF
-        handleSavePDF(toPDF);
-    }
 
     // Function called on submit that uses emailjs to send email of valid contact form
     const onSubmit = async (data) => {
@@ -77,22 +57,32 @@ const Form = () => {
         const table = `
         <table style="border-collapse: collapse; width: 100%;">
             <tr>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">№</th>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">Размер на рамката</th>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">Посока на отваряне</th>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">Брой панти</th>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">Крило</th>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">Брава с магнитен насрещник</th>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">Уплътнение</th>
-                <th style="border: 1px solid black; padding: 8px; text-align: center">Брой</th>
+                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">№</th>
+                <th colspan="2" style="border: 1px solid black; padding: 4px; text-align: center">Размер на рамката</th>
+                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Посока на отваряне</th>
+                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Брой панти</th>
+                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Крило</th>
+                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Брава с магнитен насрещник</th>
+                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Уплътнение</th>
+                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Брой</th>
+            </tr>
+            <tr>
+                <th style="border: 1px solid black; padding: 4px; text-align: center">Широчина</td>
+                <th style="border: 1px solid black; padding: 4px; text-align: center">Височина</td> 
+            </tr>
+            <tr>
+                <th style="border: 1px solid black; padding: 4px; text-align: center">LB, mm</td>
+                <th style="border: 1px solid black; padding: 4px; text-align: center">HB, mm</td>
             </tr>
             ${rows.map((row, index) => {
             return `
                 <tr>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${index + 1}</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">
-                    Широчина - ${row.frameSize.width}mm<br/>
-                    Височина - ${row.frameSize.height}mm</td>
+                    ${row.frameSize.width}mm
+                    </td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">
+                    ${row.frameSize.height}mm</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">
                         ${row.direction}
                     </td>
@@ -153,7 +143,8 @@ const Form = () => {
                 text: "След обработка на заявката ще се свържем с Вас!",
                 icon: "success",
                 confirmButtonText: "Добре",
-                confirmButtonColor: "#3085d6"
+                confirmButtonColor: "#3085d6",
+                footer: "Ще получите копие от поръчката на email"
             })
                 .then(() => {
                     // window.location.href = "https://www.prodes.bg/preview/page/66/3169";
@@ -305,8 +296,7 @@ const Form = () => {
                         {/* Product list */}
                         <div className='formRow'>
                             <div className='col'>
-                                <p className='font-size-16' ref={targetRef}>
-                                    <p id='savePDF'></p>
+                                <p className='font-size-16'>
                                     <ProductList rows={rows} setRows={setRows} />
                                 </p>
                             </div>
@@ -344,12 +334,6 @@ const Form = () => {
                                 </div>
                             </div>
                         </div>
-
-
-
-                        <button type='button' className='btn-toPDF' onClick={handlePDF}>
-                            Запази в PDF
-                        </button>
 
                         <button
                             className='submit-btn'
