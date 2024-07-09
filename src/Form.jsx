@@ -53,38 +53,72 @@ const Form = () => {
             return;
         }
 
+
+        const styleHeader = {
+            textAlign: 'center',
+            padding: '4px',
+            border: '1px solid black',
+        };
+
+
         // Setup HTML table for email
         const table = `
         <table style="border-collapse: collapse; width: 100%;">
             <tr>
-                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">№</th>
-                <th colspan="2" style="border: 1px solid black; padding: 4px; text-align: center">Размер на рамката</th>
-                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Посока на отваряне</th>
-                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Брой панти</th>
-                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Крило</th>
-                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Брава с магнитен насрещник</th>
-                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Уплътнение</th>
-                <th rowspan="3" style="border: 1px solid black; padding: 4px; text-align: center">Брой</th>
+                <th rowspan="3" style=${styleHeader}>№</th>
+                <th colspan="2" style=${styleHeader}>Размер на рамката</th>
+                <th colspan="4" style=${styleHeader}>Посока на отваряне</th>
+                <th rowspan="3" style=${styleHeader}>Брой панти</th>
+                <th rowspan="3" style=${styleHeader}>Крило</br><span style="font-style: italic; font-size: 11px;">MDF, грундиран</span></th>
+                <th rowspan="3" style=${styleHeader}>Брава с магнитен насрещник</th>
+                <th rowspan="3" style=${styleHeader}>Уплътнение</th>
+                <th rowspan="3" style=${styleHeader}>Брой</th>
             </tr>
             <tr>
-                <th style="border: 1px solid black; padding: 4px; text-align: center">Широчина</td>
-                <th style="border: 1px solid black; padding: 4px; text-align: center">Височина</td> 
+                <th style=${styleHeader}>Широчина</th>
+                <th style=${styleHeader}>Височина</th> 
+                <th colspan="2" style=${styleHeader}>Навътре</th>
+                <th colspan="2" style=${styleHeader}>Навън</th>
             </tr>
             <tr>
-                <th style="border: 1px solid black; padding: 4px; text-align: center">LB, mm</td>
-                <th style="border: 1px solid black; padding: 4px; text-align: center">HB, mm</td>
+                <th style=${styleHeader}>LB, mm</th>
+                <th style=${styleHeader}>HB, mm</th>
+                <th style=${styleHeader}>Дясна</th>
+                <th style=${styleHeader}>Лява</th>
+                <th style=${styleHeader}>Дясна</th>
+                <th style=${styleHeader}>Лява</th>
             </tr>
             ${rows.map((row, index) => {
+            let dirInRight = '';
+            let dirInLeft = '';
+            let dirOutRight = '';
+            let dirOutLeft = '';
+
+            if (row.direction === "Навътре, дясно") dirInRight = 'X';
+            if (row.direction === "Навътре, ляво") dirInLeft = 'X';
+            if (row.direction === "Навън, дясно") dirOutRight = 'X';
+            if (row.direction === "Навън, ляво") dirOutLeft = 'X';
+            
+
             return `
                 <tr>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${index + 1}</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">
-                    ${row.frameSize.width}mm
+                    ${row.frameSize.width}
                     </td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">
-                    ${row.frameSize.height}mm</td>
+                    ${row.frameSize.height}</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">
-                        ${row.direction}
+                        ${dirInRight}
+                    </td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">
+                        ${dirInLeft}
+                    </td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">
+                        ${dirOutRight}
+                    </td>
+                    <td style="border: 1px solid black; padding: 8px; text-align:center">
+                        ${dirOutLeft}
                     </td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${row.hinges}</td>
                     <td style="border: 1px solid black; padding: 8px; text-align:center">${row.wing}</td>
@@ -172,10 +206,10 @@ const Form = () => {
     return (
         <div className='ContactForm'>
             <div className='container' id='container'>
-            
+
 
                 <div className='contactForm'>
-                <h1 className='text-center title'>Бланка за тапетни врати</h1>
+                    <h1 className='text-center title'>Бланка за тапетни врати</h1>
                     <form
                         id='contact-form'
                         onSubmit={handleSubmit(onSubmit)}
